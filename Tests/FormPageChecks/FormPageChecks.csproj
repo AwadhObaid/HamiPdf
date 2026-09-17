@@ -4,6 +4,6 @@
   <PackageReference Include="PDFsharp" Version="6.2.4"/>
   <Compile Include="../../Pages/PagePlan.cs" Link="PagePlan.cs"/>
   <Compile Include="../../Pages/FormPageExport.cs" Link="FormPageExport.cs"/>
-  <Compile Include="../../Pages/PageExport.cs" Link="PageExport.cs"/>
+  <Content Include="Fixtures/**" CopyToOutputDirectory="PreserveNewest"/>
  </ItemGroup>
 </Project>

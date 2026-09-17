@@ -3,7 +3,7 @@
  Title="إدارة الصفحات — الحامي PDF" Width="1180" Height="780" MinWidth="880" MinHeight="580"
  Background="#F2F5FA" FontFamily="Segoe UI" FontSize="13" FlowDirection="RightToLeft" WindowStartupLocation="CenterOwner"
  Loaded="Manager_Loaded" Closing="Manager_Closing" Closed="Manager_Closed">
- <Grid>
+ <Grid x:Name="RootPanel">
   <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
   <Border Grid.Row="0" Background="White" Padding="6,3">
    <WrapPanel x:Name="ToolsPanel">

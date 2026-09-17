@@ -14,10 +14,7 @@ internal static class PageExport
     {
         using var stream = new MemoryStream(bytes, false);
         using var document = PdfReader.Open(stream, PdfDocumentOpenMode.Import);
-        // Importing page widgets alone cannot preserve the document's field tree.
-        if (HasFormDeclaration(document))
-            throw new InvalidDataException("لتعبئة هذا النموذج وحفظ حقوله استخدم «تعبئة النماذج» من النافذة الرئيسية. ترتيب ودمج صفحات النماذج غير مدعوم في هذه المرحلة.");
-        if (document.PageCount == 0) throw new InvalidDataException("الملف لا يحتوي صفحات.");
+        FormPageExport.Check(document);
     }
 
     public static void Save(IReadOnlyList<PageEntry> pages, IReadOnlyDictionary<Guid, SourceRecord> sources, string path)

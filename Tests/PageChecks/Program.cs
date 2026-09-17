@@ -22,7 +22,7 @@ var sources = new Dictionary<Guid, SourceRecord> { [sourceA.Id] = sourceA, [sour
 // Regression: an ordinary PDF has no /AcroForm entry and must not throw.
 PageExport.CheckSource(sourceA.Bytes);
 PageExport.CheckSource(sourceB.Bytes);
-// Regression: declared forms are still rejected intentionally, without calling the throwing getter.
+// Regression: empty form declarations are accepted, without calling the throwing getter.
 using (var formDocument = new PdfDocument())
 {
     formDocument.AddPage();
@@ -34,7 +34,7 @@ using (var formDocument = new PdfDocument())
     bool rejected = false;
     try { PageExport.CheckSource(formStream.ToArray()); }
     catch (InvalidDataException) { rejected = true; }
-    Check(rejected, "Reject a declared form using safe catalog inspection");
+    Check(!rejected, "Accept an empty AcroForm safely");
 }
 var a=new PageEntry(Guid.NewGuid(),sourceA.Id,0);
 var b=new PageEntry(Guid.NewGuid(),sourceA.Id,1);

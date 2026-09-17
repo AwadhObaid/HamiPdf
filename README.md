@@ -1,62 +1,29 @@
-# الحامي PDF — HamiPdf
+# الحامي PDF — HamiPdf 0.9.2
 
-تطبيق Windows لعرض ملفات PDF في تبويبات، وتنظيم الصفحات، وإضافة النصوص والصور والملاحظات والتظليل والرسم، وحفظ مشاريع قابلة للاستكمال. يدعم تعبئة نماذج AcroForm وحفظها تفاعليًا.
+تطبيق Windows لعرض ملفات PDF في تبويبات وتحريرها وتعبئة النماذج وإدارة صفحاتها.
 
-**المطور: Awadh Faghmah**  
-**الإصدار: 0.8.2**
+المطوّر: **Awadh Faghmah** — Copyright © 2026.
 
-## المتطلبات
+## الجديد
 
-Windows 10 (19041 أو أحدث) أو Windows 11، و.NET 8 SDK للبناء، وWebView2 Runtime للعرض. إنشاء ملف التثبيت يحتاج Inno Setup 6.3 أو أحدث.
+- دمج وترتيب وتدوير واستخراج صفحات نماذج AcroForm مع حفظ الحقول وقيمها.
+- فصل أسماء الحقول بين الملفات المدمجة لمنع تداخل القيم.
+- إصلاح ترتيب تحرير عوارض PDF عند الإغلاق؛ أكد المستخدم نجاح تجربة 0.9.2 على Windows.
+- معلومات التطبيق وأيقونته، والتثبيت في Program Files، واختبار محتوى الواجهة المنشورة.
 
-## التنظيف والاختبارات والتشغيل
+## البناء والتشغيل
+
+يتطلب Windows و.NET 8 SDK وWebView2 Runtime. من PowerShell داخل المشروع:
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File .\build-run.ps1
 ```
 
-## إنشاء المثبّت
-
-أغلق البرنامج أولًا:
+ينفّذ السكربت التنظيف والاختبارات والبناء والتشغيل. بعد إغلاق البرنامج، ومع توفر Inno Setup:
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File .\build-installer.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File .\install-machine.ps1
 ```
 
-يستخدم المثبّت Program Files\HamiPdf لجميع المستخدمين. راجع PROGRAM_FILES_AR.md للانتقال من نسخة مستخدم واحد، وUPDATE_082_AR.md لأحدث التغييرات.
-
-## رفع هذه الحزمة من جهازك
-
-افتح PowerShell بجوار upload-github.ps1 داخل مجلد الحزمة الجديد، ثم نفّذ:
-
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\upload-github.ps1
-```
-
-يرفع السكربت إلى المستودع الذي حدّده المستخدم AwadhObaid/HamiPdf ويحافظ على ظهوره الحالي. يحتاج Git وGitHub CLI؛ يسجّل الدخول بحساب AwadhObaid إن لزم. لا يستخدم force push ويتوقف عند اختلاف تاريخ المستودع. شغّله داخل هذه الحزمة النظيفة، وليس داخل مجلد يضم ملفات شخصية غير مراجعة.
-
-## استنساخ المشروع والتحديثات
-
-```powershell
-git clone https://github.com/AwadhObaid/HamiPdf.git
-cd HamiPdf
-powershell -NoProfile -ExecutionPolicy Bypass -File .\build-run.ps1
-```
-
-ملفات البناء والمستندات الشخصية ومفاتيح التوقيع مستبعدة بواسطة .gitignore. لإرسال تحديثاتك بعد مراجعتها:
-
-```powershell
-git add .
-git commit -m "Update HamiPdf"
-git push origin main
-```
-
-## حدود الدعم
-
-إدارة صفحات النماذج التفاعلية (الدمج والاستخراج والترتيب) مؤجلة. XFA والتوقيعات الرقمية وحسابات JavaScript داخل PDF غير مدعومة حاليًا. راجع PHASE08_README_AR.md وVALIDATION.md لتفاصيل الاختبارات وحدود التحقق.
-
-## الحقوق
-
-Copyright © 2026 Awadh Faghmah. All rights reserved.
-
-المكونات الخارجية تحتفظ بتراخيصها؛ راجع THIRD_PARTY_NOTICES.md والتراخيص المرفقة بمحرك PDF.js.
+راجع PHASE09_README_AR.md لحدود دعم النماذج وSHUTDOWN_FIX_AR.md لتفاصيل الإغلاق. إعداد تعطيل GPU في WebView2 إجراء توافق تجريبي. المستودع يتضمن نماذج اختبار اصطناعية فقط، ولا يتضمن مستندات المستخدم أو ملفات التثبيت الناتجة.

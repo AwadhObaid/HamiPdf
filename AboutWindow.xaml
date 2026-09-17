@@ -13,7 +13,7 @@
   <Border Background="White" Padding="16" CornerRadius="8" BorderBrush="#DCE5EB" BorderThickness="1">
    <StackPanel>
     <TextBlock Text="تطوير" TextAlignment="Center" Foreground="#526477"/>
-    <TextBlock Text="Awadh Faghmah" FlowDirection="LeftToRight" TextAlignment="Center" FontSize="21" FontWeight="SemiBold" Foreground="#147E70" Margin="0,5,0,9"/>
+    <TextBlock x:Name="DeveloperName" Text="Awadh Faghmah" FlowDirection="LeftToRight" TextAlignment="Center" FontSize="21" FontWeight="SemiBold" Foreground="#147E70" Margin="0,5,0,9"/>
     <TextBlock Text="© 2026 Awadh Faghmah" FlowDirection="LeftToRight" TextAlignment="Center"/>
     <TextBlock Text="جميع حقوق التطبيق محفوظة للمطور." TextAlignment="Center" Margin="0,5,0,0"/>
    </StackPanel>

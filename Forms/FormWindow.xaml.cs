@@ -32,7 +32,7 @@ public partial class FormWindow : Window
             if (!File.Exists(Path.Combine(folder, "index.html")))
                 throw new IOException("ملفات عارض النماذج ناقصة. أعد بناء البرنامج أو تثبيته.");
             string profile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "HamiPdf", "WebView2");
-            var env = await CoreWebView2Environment.CreateAsync(null, profile, new CoreWebView2EnvironmentOptions { Language = "ar" });
+            var env = await CoreWebView2Environment.CreateAsync(null, profile, HamiPdf.Services.BrowserRuntime.CreateOptions());
             if (closed) return;
             await Browser.EnsureCoreWebView2Async(env);
             if (closed) return;
@@ -103,7 +103,21 @@ public partial class FormWindow : Window
     {
         if (busy) { e.Cancel = true; return; }
         if (dirty && MessageBox.Show(this, "توجد تعديلات غير محفوظة. هل تريد إغلاق النافذة وفقدها؟\nاختر «لا» ثم «حفظ نسخة» للاحتفاظ بها.", "تعبئة النماذج", MessageBoxButton.YesNo, MessageBoxImage.Warning, MessageBoxResult.No) != MessageBoxResult.Yes)
+        {
             e.Cancel = true;
+            return;
+        }
+        if (closed) return;
+        closed = true;
+        ShutdownTrace.Write("form.closing.begin");
+        if (Browser.CoreWebView2 is {} core)
+        {
+            core.WebMessageReceived -= MessageReceived;
+            core.Stop();
+        }
+        Browser.Dispose();
+        Content = null;
+        ShutdownTrace.Write("form.closing.end");
     }
-    private void OnClosed(object? sender, EventArgs e) { closed = true; Browser.Dispose(); }
+    private void OnClosed(object? sender, EventArgs e) => ShutdownTrace.Write("form.closed");
 }

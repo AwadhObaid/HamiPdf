@@ -191,11 +191,27 @@ public partial class PageManagerWindow : Window
         try
         {
             StatusLabel.Text = "جارٍ حفظ الصفحات والتحقق منها…";
-            await Task.Run(() => PageExport.Save(selection, sources, dialog.FileName));
+            bool interactive = await Task.Run(() => selection.Select(p=>p.SourceId).Distinct().Any(id=>FormPageExport.HasForm(sources[id].Bytes)));
+            if (interactive)
+            {
+                StatusLabel.Text = "جارٍ نقل الصفحات وحقولها والتحقق من القيم…";
+                var prepared = await Task.Run(() => FormPageExport.Prepare(selection,sources));
+                var composer = new Microsoft.Web.WebView2.Wpf.WebView2 {
+                    Width=1, Height=1, HorizontalAlignment=HorizontalAlignment.Left,
+                    VerticalAlignment=VerticalAlignment.Top, IsHitTestVisible=false, Focusable=false
+                };
+                RootPanel.Children.Insert(0,composer);
+                try {
+                    var data = await FormPageComposer.ComposeAsync(composer,prepared);
+                    await Task.Run(() => FormPageExport.Finish(data,prepared,dialog.FileName));
+                }
+                finally { RootPanel.Children.Remove(composer); composer.Dispose(); }
+            }
+            else await Task.Run(() => PageExport.Save(selection, sources, dialog.FileName));
             SavedPath = dialog.FileName;
             if (!extract) savedRevision = revision; // Extract is not a save of the complete arrangement.
             StatusLabel.Text = "تم الحفظ: " + dialog.FileName;
-            MessageBox.Show(this, $"حُفظت {selection.Count} صفحة بنجاح.\nستفتح آخر نسخة محفوظة في العارض عند إغلاق هذه النافذة.", "الحامي PDF", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show(this, $"حُفظت {selection.Count} صفحة بنجاح." + (interactive ? "\nبقيت الحقول قابلة للتعبئة. عند الدمج، تُضاف بادئة لأسماء الحقول لفصل الملفات." : "") + "\nستفتح آخر نسخة محفوظة في العارض عند إغلاق هذه النافذة.", "الحامي PDF", MessageBoxButton.OK, MessageBoxImage.Information);
             return true;
         }
         catch (Exception ex) { Error("تعذر حفظ الصفحات. الملفات الأصلية لم تتغير.\n" + ex.Message, ex); return false; }
@@ -227,7 +243,7 @@ public partial class PageManagerWindow : Window
             string folder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "HamiPdf", "logs");
             Directory.CreateDirectory(folder);
             string path = Path.Combine(folder, "pages_" + DateTime.Now.ToString("yyyyMMdd_HHmmss_fff") + "_" + Guid.NewGuid().ToString("N")[..8] + ".log");
-            File.WriteAllText(path, "HamiPdf 0.7.2\n" + DateTime.Now.ToString("O") + "\n" + exception);
+            File.WriteAllText(path, "HamiPdf 0.9.2\n" + DateTime.Now.ToString("O") + "\n" + exception);
             return path;
         }
         catch { return null; }

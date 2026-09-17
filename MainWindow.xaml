@@ -4,7 +4,7 @@
  xmlns:wv="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
  Title="الحامي PDF" Width="1180" Height="800" MinWidth="780" MinHeight="560"
  UseLayoutRounding="True" SnapsToDevicePixels="True" WindowStartupLocation="CenterScreen" FontFamily="Segoe UI" FontSize="15"
- Background="#F2F5FA" FlowDirection="RightToLeft" Loaded="Window_Loaded" Closed="Window_Closed" AllowDrop="True" DragOver="Files_DragOver" Drop="Files_Drop">
+ Background="#F2F5FA" FlowDirection="RightToLeft" Loaded="Window_Loaded" Closing="Window_Closing" Closed="Window_Closed" AllowDrop="True" DragOver="Files_DragOver" Drop="Files_Drop">
  <Window.InputBindings>
   <KeyBinding Key="O" Modifiers="Control" Command="ApplicationCommands.Open"/>
  </Window.InputBindings>
@@ -60,7 +60,7 @@
   <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
   <Border Background="White" Padding="8,6" BorderBrush="#DCE5EB" BorderThickness="0,0,0,1">
    <DockPanel LastChildFill="True">
-    <Image DockPanel.Dock="Right" Source="/HamiPdf;component/Assets/HamiPdf.png" Width="28" Height="28" Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True" Margin="3,0,9,0" ToolTip="الحامي PDF · 0.8.2"/>
+    <Image x:Name="BrandImage" DockPanel.Dock="Right" Source="/HamiPdf;component/Assets/HamiPdf.png" Width="28" Height="28" Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True" Margin="3,0,9,0" ToolTip="الحامي PDF · 0.8.3"/>
     <WrapPanel VerticalAlignment="Center">
      <Button Content="فتح" Style="{StaticResource CompactTool}" Tag="{StaticResource IconOpen}" Click="Open_Click" ToolTip="فتح ملفات PDF — Ctrl+O"/>
      <Button Content="فتح مشروع" Style="{StaticResource CompactTool}" Tag="{StaticResource IconProject}" Click="OpenProject_Click" ToolTip="استكمال مشروع محفوظ"/>
@@ -70,7 +70,7 @@
      <Button x:Name="PrintButton" Content="طباعة" Style="{StaticResource CompactTool}" Tag="{StaticResource IconPrint}" Click="Print_Click" IsEnabled="False" ToolTip="طباعة المستند النشط"/>
      <Button x:Name="CloseButton" Content="إغلاق" Style="{StaticResource CompactTool}" Tag="{StaticResource IconClose}" Click="Close_Click" IsEnabled="False" ToolTip="إغلاق التبويب النشط"/>
      <Button Content="مساعدة" Style="{StaticResource CompactTool}" Tag="{StaticResource IconHelp}" Click="Help_Click" ToolTip="شرح الأدوات"/>
-     <Button Content="حول التطبيق" Style="{StaticResource CompactTool}" Tag="{StaticResource IconHelp}" Click="About_Click" ToolTip="معلومات التطبيق وحقوق المطور"/>
+     <Button x:Name="AboutButton" Content="حول التطبيق" Style="{StaticResource CompactTool}" Tag="{StaticResource IconHelp}" Click="About_Click" ToolTip="معلومات التطبيق وحقوق المطور"/>
     </WrapPanel>
    </DockPanel>
   </Border>

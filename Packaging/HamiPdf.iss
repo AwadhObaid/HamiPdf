@@ -1,11 +1,11 @@
-﻿#ifndef PublishDir
+#ifndef PublishDir
   #error PublishDir is required
 #endif
 #ifndef OutputDir
   #error OutputDir is required
 #endif
 #ifndef AppVersion
-  #define AppVersion "0.8.2"
+  #define AppVersion "0.9.2"
 #endif
 [Setup]
 AppId={{8B43D632-67AA-45C5-BE93-F759615B6C19}

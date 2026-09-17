@@ -36,6 +36,7 @@ public partial class MainWindow : Window
     }
     public void EnqueueFiles(IEnumerable<string> paths)
     {
+        if (closed) return;
         foreach (var path in paths) pending.Enqueue(path);
         if (WindowState == WindowState.Minimized) WindowState = WindowState.Normal;
         Activate();
@@ -81,7 +82,7 @@ public partial class MainWindow : Window
         try
         {
             string profile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "HamiPdf", "WebView2");
-            environment ??= CoreWebView2Environment.CreateAsync(null, profile, new CoreWebView2EnvironmentOptions { Language = "ar" });
+            environment ??= CoreWebView2Environment.CreateAsync(null, profile, HamiPdf.Services.BrowserRuntime.CreateOptions());
             var env = await environment;
             if (closed || tab.Removed) return;
             await tab.Viewer.EnsureCoreWebView2Async(env);
@@ -139,7 +140,9 @@ public partial class MainWindow : Window
         if (tab.Removed) return;
         tab.Removed = true;
         documents.Remove(tab); DocumentTabs.Items.Remove(tab.Header);
-        ViewerHost.Children.Remove(tab.Viewer); tab.Viewer.Dispose();
+        tab.Viewer.CoreWebView2?.Stop();
+        tab.Viewer.Dispose();
+        ViewerHost.Children.Remove(tab.Viewer);
         if (DocumentTabs.SelectedIndex < 0 && DocumentTabs.Items.Count > 0) DocumentTabs.SelectedIndex = 0;
         RefreshActive();
     }
@@ -214,10 +217,28 @@ public partial class MainWindow : Window
     {
         if (!closed) Modal(() => MessageBox.Show(this, message, "الحامي PDF", MessageBoxButton.OK, MessageBoxImage.Warning));
     }
+    private void Window_Closing(object? sender, System.ComponentModel.CancelEventArgs e)
+    {
+        if (closed) return;
+        // Keep child save/discard decisions in their own windows.
+        if (modalOpen) { e.Cancel = true; return; }
+        ShutdownTrace.Write("main.closing.begin");
+        closed = true; queueTimer.Stop(); pending.Clear();
+        // Dispose native child controllers while the parent HWND is still alive.
+        foreach (var tab in documents) tab.Removed = true;
+        foreach (var tab in documents)
+        {
+            ShutdownTrace.Write("viewer.dispose.begin");
+            tab.Viewer.CoreWebView2?.Stop();
+            tab.Viewer.Dispose();
+            ShutdownTrace.Write("viewer.dispose.end");
+        }
+        ViewerHost.Children.Clear();
+        documents.Clear();
+        ShutdownTrace.Write("main.closing.end");
+    }
     private void Window_Closed(object? sender, EventArgs e)
     {
-        closed = true; queueTimer.Stop(); pending.Clear();
-        foreach (var tab in documents) { tab.Removed = true; tab.Viewer.Dispose(); }
-        documents.Clear();
+        ShutdownTrace.Write("main.closed");
     }
 }

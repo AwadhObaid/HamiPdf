@@ -28,3 +28,6 @@ upload/
 *.key
 *.pem
 *.keystore
+
+# Synthetic form regression fixtures
+!Tests/FormPageChecks/Fixtures/*.pdf

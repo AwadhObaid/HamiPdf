@@ -1,4 +1,4 @@
-# الحامي PDF 0.8.2 — التثبيت لجميع المستخدمين
+# الحامي PDF 0.9.2 — التثبيت لجميع المستخدمين
 
 المثبّت الجديد يستخدم مجلد Program Files ذي 64 بت، وهو عادةً:
 C:\Program Files\HamiPdf
@@ -16,9 +16,9 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\build-installer.ps1
 powershell -NoProfile -ExecutionPolicy Bypass -File .\install-machine.ps1
 ```
 
-build-installer.ps1 ينفذ التنظيف والاختبارات والبناء ثم ينشئ HamiPdf-Setup-0.8.2-win-x64.exe.
+build-installer.ps1 ينفذ التنظيف والاختبارات والبناء ثم ينشئ HamiPdf-Setup-0.9.2-win-x64.exe.
 
-install-machine.ps1 يختار أحدث مثبّت 0.8.2 تحت artifacts ويشترط وجود ملف SHA256 الناتج عن البناء الناجح ويطابقه قبل إزالة النسخة القديمة. يشغّل مزيل النسخة الشخصية باسم المستخدم الحالي: أكمل إزالة النسخة القديمة في نافذتها. بعد اكتمالها يشغّل المثبّت الجديد مع طلب صلاحيات المسؤول. أكمل التثبيت ثم استخدم الاختصار الجديد.
+install-machine.ps1 يختار أحدث مثبّت 0.9.2 تحت artifacts ويشترط وجود ملف SHA256 الناتج عن البناء الناجح ويطابقه قبل إزالة النسخة القديمة. يشغّل مزيل النسخة الشخصية باسم المستخدم الحالي: أكمل إزالة النسخة القديمة في نافذتها. بعد اكتمالها يشغّل المثبّت الجديد مع طلب صلاحيات المسؤول. أكمل التثبيت ثم استخدم الاختصار الجديد.
 
 لا تشغّل سكربت الانتقال كمسؤول أو بحساب مستخدم آخر؛ هو يرفع صلاحيات المثبّت الجديد فقط. لا يحذف السكربت ملفات PDF أو مشاريع .hamipdf ولا مجلد المشروع البرمجي. إزالة البرنامج تستخدم مزيله الرسمي فقط. إن ألغيت التثبيت بعد إزالة القديم، أعد تشغيل سكربت الانتقال لاستكمال التثبيت.
 
@@ -27,7 +27,7 @@ install-machine.ps1 يختار أحدث مثبّت 0.8.2 تحت artifacts ويش
 لتحديد ملف Setup يدويًا:
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\install-machine.ps1 -SetupPath "E:\مسار الحزمة\HamiPdf-Setup-0.8.2-win-x64.exe"
+powershell -NoProfile -ExecutionPolicy Bypass -File .\install-machine.ps1 -SetupPath "E:\مسار الحزمة\HamiPdf-Setup-0.9.2-win-x64.exe"
 ```
 
 ## التنظيف والتشغيل من المصدر

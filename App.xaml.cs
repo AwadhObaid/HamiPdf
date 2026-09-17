@@ -9,6 +9,11 @@ namespace HamiPdf;
 
 public partial class App : Application
 {
+    // Set before InitializeComponent/any HWND is created, including --verify-ui.
+    static App()
+    {
+        System.Windows.Media.RenderOptions.ProcessRenderMode = System.Windows.Interop.RenderMode.SoftwareOnly;
+    }
     private Mutex? instance;
     private bool ownsInstance;
     private readonly CancellationTokenSource stop = new();
@@ -16,6 +21,18 @@ public partial class App : Application
     {
         ShutdownMode = ShutdownMode.OnExplicitShutdown;
         base.OnStartup(e);
+        if (e.Args.Length == 2 && e.Args[0] == "--verify-ui")
+        {
+            int code = 0;
+            try { UiVerification.WriteReport(e.Args[1]); }
+            catch (Exception ex)
+            {
+                code = 1;
+                try { File.WriteAllText(e.Args[1], System.Text.Json.JsonSerializer.Serialize(new { ok = false, error = ex.ToString() })); }
+                catch { /* The exit code also signals report-write failure. */ }
+            }
+            Shutdown(code); return;
+        }
         string identity = WindowsIdentity.GetCurrent().User!.Value + "-" + Process.GetCurrentProcess().SessionId;
         string pipeName = "HamiPdf-" + identity;
         instance = new Mutex(true, "Local\\" + pipeName, out ownsInstance);
@@ -68,9 +85,11 @@ public partial class App : Application
     }
     protected override void OnExit(ExitEventArgs e)
     {
+        ShutdownTrace.Write("app.exit.begin code=" + e.ApplicationExitCode);
         stop.Cancel();
         if (ownsInstance) instance?.ReleaseMutex();
         instance?.Dispose();
         base.OnExit(e);
+        ShutdownTrace.Write("app.exit.end");
     }
 }

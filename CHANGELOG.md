@@ -1,3 +1,15 @@
+# 0.9.2
+
+- Preserve interactive AcroForm fields and values when reordering, rotating, merging or extracting pages.
+- Isolate same-named fields from different documents, validate field trees and appearances before saving.
+- Verify published UI and perform clean Release generation to prevent stale installer resources.
+- Use software rendering compatibility settings and release WebView2 controllers before window teardown.
+- Record shutdown stages and capture Windows crash events when the application exits abnormally.
+
+Validation: cross-build and page/form regression checks passed during development. On 2026-09-17 the user confirmed the 0.9.2 Windows trial succeeded after the shutdown fix.
+
+WebView2 GPU-disable flag remains a compatibility workaround; advanced PDF scripting, XFA and digital-signature page operations are not supported.
+
 ## 0.8.2 — About and toolbar logo
 - About window with live assembly version, description, Awadh Faghmah credit and copyright.
 - Developer metadata in the executable and installer.
