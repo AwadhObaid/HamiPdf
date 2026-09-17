@@ -1,0 +1,24 @@
+<Window x:Class="HamiPdf.AboutWindow"
+ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+ Title="حول الحامي PDF" Icon="/HamiPdf;component/Assets/HamiPdf.ico"
+ Width="520" SizeToContent="Height" ResizeMode="NoResize" WindowStartupLocation="CenterOwner"
+ FlowDirection="RightToLeft" FontFamily="Segoe UI" FontSize="14" Background="#F4F7FA"
+ UseLayoutRounding="True" SnapsToDevicePixels="True" ShowInTaskbar="False">
+ <StackPanel Margin="26">
+  <Image Source="/HamiPdf;component/Assets/HamiPdf.png" Width="88" Height="88" Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality" HorizontalAlignment="Center"/>
+  <TextBlock Text="الحامي PDF" FontSize="26" FontWeight="SemiBold" Foreground="#12344B" TextAlignment="Center" Margin="0,12,0,4"/>
+  <TextBlock x:Name="VersionText" TextAlignment="Center" Foreground="#526477"/>
+  <TextBlock Text="برنامج لعرض ملفات PDF وتنظيم صفحاتها، وإضافة النصوص والصور والملاحظات، وتعبئة النماذج التفاعلية وحفظ المشاريع." TextWrapping="Wrap" TextAlignment="Center" Foreground="#334D60" Margin="0,18,0,18"/>
+  <Border Background="White" Padding="16" CornerRadius="8" BorderBrush="#DCE5EB" BorderThickness="1">
+   <StackPanel>
+    <TextBlock Text="تطوير" TextAlignment="Center" Foreground="#526477"/>
+    <TextBlock Text="Awadh Faghmah" FlowDirection="LeftToRight" TextAlignment="Center" FontSize="21" FontWeight="SemiBold" Foreground="#147E70" Margin="0,5,0,9"/>
+    <TextBlock Text="© 2026 Awadh Faghmah" FlowDirection="LeftToRight" TextAlignment="Center"/>
+    <TextBlock Text="جميع حقوق التطبيق محفوظة للمطور." TextAlignment="Center" Margin="0,5,0,0"/>
+   </StackPanel>
+  </Border>
+  <TextBlock Text="تخضع مكتبات الطرف الثالث لتراخيصها الخاصة. يعمل البرنامج على الملفات محليًا." FontSize="12" TextWrapping="Wrap" TextAlignment="Center" Foreground="#657785" Margin="0,15,0,16"/>
+  <Button Content="إغلاق" IsCancel="True" Width="95" Padding="10,6" HorizontalAlignment="Center"/>
+ </StackPanel>
+</Window>

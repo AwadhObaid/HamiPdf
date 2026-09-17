@@ -1,0 +1,8 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' blob: data:; connect-src 'self'; object-src 'none'; base-uri 'none'">
+<title>تعبئة النماذج</title><link rel="stylesheet" href="pdfjs/web/pdf_viewer.css"><link rel="stylesheet" href="forms.css"></head>
+<body><header><strong>تعبئة النماذج</strong><button id="save" disabled>حفظ نسخة</button><button id="prev" disabled>السابق</button><span id="pages">—</span><button id="next" disabled>التالي</button><select id="zoom" aria-label="التكبير"><option value="page-width">ملاءمة العرض</option><option value="page-fit">صفحة كاملة</option><option value="1">100%</option><option value="1.5">150%</option><option value="2">200%</option></select></header>
+<div id="status" role="status">جارٍ تجهيز النموذج…</div><div id="container" dir="ltr"><div id="viewer" class="pdfViewer"></div></div>
+<footer>اكتب داخل الحقول ثم احفظ نسخة PDF. الحسابات الآلية وأزرار الإرسال لا تعمل في هذه المرحلة.</footer>
+<script type="module" src="forms.mjs"></script></body></html>

@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+ <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net8.0-windows</TargetFramework><UseWPF>true</UseWPF><ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable></PropertyGroup>
+ <ItemGroup>
+  <PackageReference Include="PDFsharp" Version="6.2.4"/>
+  <Compile Include="../../Forms/FormAppearance.cs" Link="FormAppearance.cs"/>
+  <Compile Include="../../Forms/AtomicPdfSave.cs" Link="AtomicPdfSave.cs"/>
+  <Compile Include="../../Editor/PdfExport.cs" Link="PdfExport.cs"/>
+  <Compile Include="../../Editor/PageGeometry.cs" Link="PageGeometry.cs"/>
+  <Compile Include="../../Editor/StrokeGeometry.cs" Link="StrokeGeometry.cs"/>
+  <Compile Include="../../Editor/OverlayItem.cs" Link="OverlayItem.cs"/>
+ </ItemGroup>
+</Project>

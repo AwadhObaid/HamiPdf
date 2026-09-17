@@ -1,0 +1,97 @@
+<Window Icon="/HamiPdf;component/Assets/HamiPdf.ico" x:Class="HamiPdf.MainWindow"
+ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+ xmlns:wv="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
+ Title="الحامي PDF" Width="1180" Height="800" MinWidth="780" MinHeight="560"
+ UseLayoutRounding="True" SnapsToDevicePixels="True" WindowStartupLocation="CenterScreen" FontFamily="Segoe UI" FontSize="15"
+ Background="#F2F5FA" FlowDirection="RightToLeft" Loaded="Window_Loaded" Closed="Window_Closed" AllowDrop="True" DragOver="Files_DragOver" Drop="Files_Drop">
+ <Window.InputBindings>
+  <KeyBinding Key="O" Modifiers="Control" Command="ApplicationCommands.Open"/>
+ </Window.InputBindings>
+ <Window.CommandBindings>
+  <CommandBinding Command="ApplicationCommands.Open" Executed="Open_Executed"/>
+ </Window.CommandBindings>
+ <Window.Resources>
+  <Style x:Key="CompactTool" TargetType="Button" BasedOn="{StaticResource ToolButton}">
+   <Setter Property="MinHeight" Value="30"/><Setter Property="Padding" Value="8,4"/>
+   <Setter Property="Margin" Value="2,0"/><Setter Property="FontSize" Value="12"/>
+   <Setter Property="BorderThickness" Value="0"/>
+  </Style>
+  <Style x:Key="DocumentTabStyle" TargetType="TabItem">
+   <Setter Property="Foreground" Value="#536675"/>
+   <Setter Property="Background" Value="#EAF0F4"/>
+   <Setter Property="Padding" Value="10,4"/>
+   <Setter Property="Margin" Value="0,0,3,0"/>
+   <Setter Property="Template"><Setter.Value>
+    <ControlTemplate TargetType="TabItem">
+     <Border x:Name="TabSurface" Background="{TemplateBinding Background}" BorderBrush="Transparent" BorderThickness="0,2,0,0" Padding="{TemplateBinding Padding}" CornerRadius="5,5,0,0">
+      <ContentPresenter ContentSource="Header" VerticalAlignment="Center"/>
+     </Border>
+     <ControlTemplate.Triggers>
+      <Trigger Property="IsMouseOver" Value="True"><Setter TargetName="TabSurface" Property="Background" Value="#DBE8EC"/></Trigger>
+      <Trigger Property="IsSelected" Value="True">
+       <Setter TargetName="TabSurface" Property="Background" Value="White"/>
+       <Setter TargetName="TabSurface" Property="BorderBrush" Value="#168B7C"/>
+       <Setter Property="Foreground" Value="#12344B"/>
+      </Trigger>
+      <Trigger Property="IsKeyboardFocused" Value="True"><Setter TargetName="TabSurface" Property="BorderBrush" Value="#168B7C"/></Trigger>
+     </ControlTemplate.Triggers>
+    </ControlTemplate>
+   </Setter.Value></Setter>
+  </Style>
+  <Style x:Key="TabCloseButton" TargetType="Button">
+   <Setter Property="Width" Value="22"/><Setter Property="Height" Value="22"/>
+   <Setter Property="Foreground" Value="#607480"/><Setter Property="Background" Value="Transparent"/>
+   <Setter Property="Cursor" Value="Hand"/><Setter Property="FontSize" Value="17"/>
+   <Setter Property="Template"><Setter.Value>
+    <ControlTemplate TargetType="Button">
+     <Border x:Name="CloseSurface" Background="{TemplateBinding Background}" CornerRadius="4">
+      <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+     </Border>
+     <ControlTemplate.Triggers>
+      <Trigger Property="IsMouseOver" Value="True"><Setter TargetName="CloseSurface" Property="Background" Value="#F6DDDD"/><Setter Property="Foreground" Value="#A62929"/></Trigger>
+      <Trigger Property="IsKeyboardFocused" Value="True"><Setter TargetName="CloseSurface" Property="Background" Value="#D5E8E5"/></Trigger>
+     </ControlTemplate.Triggers>
+    </ControlTemplate>
+   </Setter.Value></Setter>
+  </Style>
+ </Window.Resources>
+ <Grid>
+  <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+  <Border Background="White" Padding="8,6" BorderBrush="#DCE5EB" BorderThickness="0,0,0,1">
+   <DockPanel LastChildFill="True">
+    <Image DockPanel.Dock="Right" Source="/HamiPdf;component/Assets/HamiPdf.png" Width="28" Height="28" Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True" Margin="3,0,9,0" ToolTip="الحامي PDF · 0.8.2"/>
+    <WrapPanel VerticalAlignment="Center">
+     <Button Content="فتح" Style="{StaticResource CompactTool}" Tag="{StaticResource IconOpen}" Click="Open_Click" ToolTip="فتح ملفات PDF — Ctrl+O"/>
+     <Button Content="فتح مشروع" Style="{StaticResource CompactTool}" Tag="{StaticResource IconProject}" Click="OpenProject_Click" ToolTip="استكمال مشروع محفوظ"/>
+     <Button x:Name="EditButton" Content="تعديل" Style="{StaticResource CompactTool}" Tag="{StaticResource IconEdit}" Click="Edit_Click" IsEnabled="False" ToolTip="إضافة وتعديل النصوص والصور والملاحظات"/>
+     <Button x:Name="FormsButton" Content="تعبئة النماذج" Style="{StaticResource CompactTool}" Tag="{StaticResource IconEdit}" Click="Forms_Click" IsEnabled="False" ToolTip="تعبئة حقول آخر نسخة محفوظة وحفظ PDF تفاعلي"/>
+     <Button Content="الصفحات" Style="{StaticResource CompactTool}" Tag="{StaticResource IconPages}" Click="Pages_Click" ToolTip="إدارة الصفحات: دمج وترتيب وتدوير واستخراج"/>
+     <Button x:Name="PrintButton" Content="طباعة" Style="{StaticResource CompactTool}" Tag="{StaticResource IconPrint}" Click="Print_Click" IsEnabled="False" ToolTip="طباعة المستند النشط"/>
+     <Button x:Name="CloseButton" Content="إغلاق" Style="{StaticResource CompactTool}" Tag="{StaticResource IconClose}" Click="Close_Click" IsEnabled="False" ToolTip="إغلاق التبويب النشط"/>
+     <Button Content="مساعدة" Style="{StaticResource CompactTool}" Tag="{StaticResource IconHelp}" Click="Help_Click" ToolTip="شرح الأدوات"/>
+     <Button Content="حول التطبيق" Style="{StaticResource CompactTool}" Tag="{StaticResource IconHelp}" Click="About_Click" ToolTip="معلومات التطبيق وحقوق المطور"/>
+    </WrapPanel>
+   </DockPanel>
+  </Border>
+  <Grid Grid.Row="1" Margin="0">
+   <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/></Grid.RowDefinitions>
+   <TabControl x:Name="DocumentTabs" ItemContainerStyle="{StaticResource DocumentTabStyle}" Padding="4,3,4,0" SelectionChanged="Tabs_SelectionChanged" Visibility="Collapsed" Background="#EAF0F4" BorderThickness="0">
+    <TabControl.Template><ControlTemplate TargetType="TabControl"><Border Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}"><ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled"><TabPanel IsItemsHost="True"/></ScrollViewer></Border></ControlTemplate></TabControl.Template>
+   </TabControl>
+   <Grid x:Name="ViewerHost" Grid.Row="1"/>
+   <Border Grid.Row="1" x:Name="WelcomePanel" Background="White" CornerRadius="12" BorderBrush="#DDE4ED" BorderThickness="1">
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" MaxWidth="540" Margin="32">
+     <TextBlock Text="PDF" FontSize="58" FontWeight="Bold" Foreground="#138879" HorizontalAlignment="Center" FlowDirection="LeftToRight"/>
+     <TextBlock Text="مستنداتك، في مكان واحد" FontSize="28" FontWeight="SemiBold" TextAlignment="Center" Margin="0,22,0,12" Foreground="#15324D"/>
+     <TextBlock Text="افتح ملفًا من جهازك، ثم استخدم شريط العارض للتكبير والتنقل بين الصفحات والبحث والطباعة." TextWrapping="Wrap" TextAlignment="Center" Foreground="#607186" LineHeight="28"/>
+     <Button Style="{StaticResource ToolButton}" Tag="{StaticResource IconOpen}" Content="اختيار ملف PDF" Click="Open_Click" HorizontalAlignment="Center" Margin="0,26,0,0" Background="#DDF3F0"/>
+     <TextBlock Text="تُعرض ملفاتك محليًا دون رفعها إلى خادم" TextAlignment="Center" FontSize="13" Foreground="#607186" Margin="0,20,0,0"/>
+    </StackPanel>
+   </Border>
+  </Grid>
+  <Border Grid.Row="2" Background="White" Padding="10,3" BorderBrush="#DCE5EB" BorderThickness="0,1,0,0">
+   <TextBlock x:Name="StatusLabel" Text="جاهز · افتح ملفًا للبدء" FontSize="11" Foreground="#526477" TextTrimming="CharacterEllipsis"/>
+  </Border>
+ </Grid>
+</Window>

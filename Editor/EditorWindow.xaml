@@ -1,0 +1,113 @@
+<Window Icon="/HamiPdf;component/Assets/HamiPdf.ico" x:Class="HamiPdf.Editor.EditorWindow"
+ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+ Title="إضافة وتعديل — الحامي PDF" Width="1280" Height="860" MinWidth="950" MinHeight="650"
+ WindowStartupLocation="CenterOwner" FontFamily="Segoe UI" FontSize="13" FlowDirection="RightToLeft"
+ Background="#F2F5FA" Loaded="Editor_Loaded" Closing="Editor_Closing" Closed="Editor_Closed" PreviewKeyDown="Editor_KeyDown">
+ <Window.Resources>
+  <Style TargetType="TextBox"><Setter Property="Padding" Value="5"/><Setter Property="Margin" Value="0,3,0,6"/><Setter Property="BorderBrush" Value="#CAD8E0"/></Style>
+  <Style TargetType="ComboBox"><Setter Property="Padding" Value="4"/><Setter Property="Margin" Value="0,3,0,6"/></Style>
+ </Window.Resources>
+ <Grid>
+  <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+  <Border Background="White" Padding="10,3" BorderBrush="#DAE4EB" BorderThickness="0,0,0,1">
+   <TextBlock x:Name="DocumentLabel" Foreground="#526477" FontSize="11" TextTrimming="CharacterEllipsis"/>
+  </Border>
+  <Border Grid.Row="1" Background="White" BorderBrush="#DAE4EB" BorderThickness="0,0,0,1" Padding="6,3">
+   <WrapPanel x:Name="ToolsPanel" IsEnabled="False">
+    <Button Content="نص" Tag="{StaticResource IconText}" Style="{StaticResource WorkspaceTool}" Click="AddText_Click" ToolTip="إضافة نص عربي أو إنجليزي"/>
+    <Button Content="صورة" Tag="{StaticResource IconImage}" Style="{StaticResource WorkspaceTool}" Click="AddImage_Click" ToolTip="إضافة PNG أو JPG"/>
+    <Button Content="ختم" Tag="{StaticResource IconStamp}" Style="{StaticResource WorkspaceTool}" Click="AddStamp_Click" ToolTip="إضافة ختم نصي؛ استخدم صورة لختمك الخاص"/>
+    <Button x:Name="HighlightButton" Content="تظليل" Tag="{StaticResource IconHighlight}" Style="{StaticResource WorkspaceTool}" Click="Highlight_Click" ToolTip="اسحب مستطيلًا فوق المنطقة المطلوبة؛ Esc للإلغاء"/>
+    <Button Content="ملاحظة" Tag="{StaticResource IconNote}" Style="{StaticResource WorkspaceTool}" Click="Note_Click" ToolTip="إضافة ملاحظة مرئية تُحفظ وتُطبع"/>
+    <Button x:Name="PenButton" Content="رسم حر" Tag="{StaticResource IconPen}" Style="{StaticResource WorkspaceTool}" Click="Pen_Click" ToolTip="اسحب بالقلم فوق الصفحة؛ Esc للإلغاء"/>
+    <Button x:Name="UndoButton" Content="تراجع" Tag="{StaticResource IconUndo}" Style="{StaticResource WorkspaceTool}" Click="Undo_Click" ToolTip="Ctrl+Z"/>
+    <Button x:Name="RedoButton" Content="إعادة" Tag="{StaticResource IconRedo}" Style="{StaticResource WorkspaceTool}" Click="Redo_Click" ToolTip="Ctrl+Y"/>
+    <Button x:Name="DeleteButton" Content="حذف" Tag="{StaticResource IconDelete}" Style="{StaticResource WorkspaceTool}" Click="Delete_Click" ToolTip="حذف الإضافة المحددة فقط"/>
+    <Button Content="حفظ مشروع" Tag="{StaticResource IconProject}" Style="{StaticResource WorkspaceTool}" Click="SaveProject_Click" ToolTip="Ctrl+S — حفظ الإضافات لاستكمال تعديلها لاحقًا" Background="#DDF3F0"/>
+    <Button Content="مشروع باسم" Tag="{StaticResource IconSave}" Style="{StaticResource WorkspaceTool}" Click="SaveProjectAs_Click" ToolTip="حفظ نسخة مستقلة من المشروع باسم آخر"/>
+    <Button Content="تصدير PDF" Tag="{StaticResource IconSave}" Style="{StaticResource WorkspaceTool}" Click="Save_Click" ToolTip="Ctrl+Shift+S — تصدير PDF للطباعة والمشاركة" Background="#DDF3F0"/>
+   </WrapPanel>
+  </Border>
+  <Grid Grid.Row="2">
+   <Grid.ColumnDefinitions><ColumnDefinition Width="250" MinWidth="220"/><ColumnDefinition Width="5"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+   <Border Background="White" BorderBrush="#DAE4EB" BorderThickness="0,0,0,1" Padding="10,8">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+     <StackPanel>
+      <TextBlock Text="عناصر الصفحة" FontSize="14" FontWeight="SemiBold" Foreground="#12344B"/>
+      <ListBox x:Name="ItemList" Height="64" Margin="0,5,0,8" SelectionChanged="ItemList_SelectionChanged" DisplayMemberPath="Content"/>
+      <TextBlock x:Name="SelectionLabel" Text="أضف عنصرًا للبدء" FontWeight="SemiBold" Margin="0,0,0,10"/>
+      <StackPanel x:Name="PropertiesPanel" IsEnabled="False">
+       <TextBlock Text="النص أو عبارة الختم"/>
+       <TextBox x:Name="TextInput" AcceptsReturn="True" TextWrapping="Wrap" Height="58" VerticalScrollBarVisibility="Auto"/>
+       <TextBlock Text="الخط"/>
+       <ComboBox x:Name="FontInput" IsEditable="False"/>
+       <Grid>
+        <Grid.ColumnDefinitions><ColumnDefinition/><ColumnDefinition/></Grid.ColumnDefinitions>
+        <StackPanel Margin="0,0,4,0"><TextBlock Text="حجم الخط"/><TextBox x:Name="FontSizeInput"/></StackPanel>
+        <StackPanel Grid.Column="1" Margin="4,0,0,0"><TextBlock Text="اللون"/>
+         <ComboBox x:Name="ColorInput" SelectedIndex="0">
+          <ComboBoxItem Content="كحلي" Tag="#12344B"/><ComboBoxItem Content="أسود" Tag="#111111"/>
+          <ComboBoxItem Content="أحمر" Tag="#C62828"/><ComboBoxItem Content="أخضر" Tag="#16836E"/>
+          <ComboBoxItem Content="أزرق" Tag="#1565C0"/><ComboBoxItem Content="أصفر" Tag="#FFD600"/>
+         </ComboBox>
+        </StackPanel>
+       </Grid>
+       <Grid>
+        <Grid.ColumnDefinitions><ColumnDefinition/><ColumnDefinition/></Grid.ColumnDefinitions>
+        <StackPanel Margin="0,0,4,0"><TextBlock Text="التعتيم %"/><TextBox x:Name="OpacityInput" ToolTip="10 شفاف نسبيًا، 100 معتم"/></StackPanel>
+        <StackPanel Grid.Column="1" Margin="4,0,0,0"><TextBlock Text="سُمك القلم"/><TextBox x:Name="StrokeInput" ToolTip="من 1 إلى 20، للرسم الحر"/></StackPanel>
+       </Grid>
+       <TextBlock Text="محاذاة النص داخل المربع"/>
+       <ComboBox x:Name="AlignmentInput" SelectedIndex="0">
+        <ComboBoxItem Content="يمين" Tag="Right"/>
+        <ComboBoxItem Content="وسط" Tag="Center"/>
+        <ComboBoxItem Content="يسار" Tag="Left"/>
+        <ComboBoxItem Content="ضبط على الجانبين" Tag="Justify"/>
+       </ComboBox>
+       <CheckBox x:Name="BoldInput" Content="خط عريض" Margin="0,0,0,8"/>
+       <CheckBox x:Name="RtlInput" Content="اتجاه عربي من اليمين" Margin="0,0,0,12"/>
+       <TextBlock Text="الموضع والحجم بوحدات الصفحة" Foreground="#607186" FontSize="12" Margin="0,0,0,6"/>
+       <Grid>
+        <Grid.ColumnDefinitions><ColumnDefinition/><ColumnDefinition/></Grid.ColumnDefinitions>
+        <StackPanel Margin="0,0,4,0"><TextBlock Text="من اليسار"/><TextBox x:Name="XInput"/></StackPanel>
+        <StackPanel Grid.Column="1" Margin="4,0,0,0"><TextBlock Text="من الأعلى"/><TextBox x:Name="YInput"/></StackPanel>
+       </Grid>
+       <Grid>
+        <Grid.ColumnDefinitions><ColumnDefinition/><ColumnDefinition/></Grid.ColumnDefinitions>
+        <StackPanel Margin="0,0,4,0"><TextBlock Text="العرض"/><TextBox x:Name="WidthInput"/></StackPanel>
+        <StackPanel Grid.Column="1" Margin="4,0,0,0"><TextBlock Text="الارتفاع"/><TextBox x:Name="HeightInput"/></StackPanel>
+       </Grid>
+       <Button Content="تطبيق الخصائص" Tag="{StaticResource IconEdit}" Style="{StaticResource WorkspaceTool}" Click="Apply_Click"/>
+      </StackPanel>
+      <TextBlock Text="اسحب العنصر لتحريكه. اسحب المقبض في زاويته لتغيير حجمه. حفظ مشروع يحتفظ بالإضافات قابلة للتعديل؛ تصدير PDF للطباعة." TextWrapping="Wrap" Foreground="#607186" LineHeight="18" FontSize="11" Margin="0,8,0,0"/>
+     </StackPanel>
+    </ScrollViewer>
+   </Border>
+   <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#DAE4EB" ResizeDirection="Columns" ResizeBehavior="PreviousAndNext"/>
+   <Grid Grid.Column="2">
+    <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/></Grid.RowDefinitions>
+    <WrapPanel x:Name="NavigationPanel" HorizontalAlignment="Center" Margin="3" IsEnabled="False" FlowDirection="LeftToRight">
+     <Button x:Name="PreviousButton" Tag="{StaticResource IconPrevious}" Style="{StaticResource WorkspaceTool}" Click="Previous_Click" ToolTip="الصفحة السابقة" AutomationProperties.Name="الصفحة السابقة"/>
+     <TextBox x:Name="PageInput" Width="52" VerticalContentAlignment="Center" TextAlignment="Center" Margin="4" KeyDown="PageInput_KeyDown" ToolTip="اكتب رقم الصفحة ثم Enter"/>
+     <TextBlock x:Name="PageCountLabel" VerticalAlignment="Center" Margin="4"/>
+     <Button x:Name="NextButton" Tag="{StaticResource IconNext}" Style="{StaticResource WorkspaceTool}" Click="Next_Click" ToolTip="الصفحة التالية" AutomationProperties.Name="الصفحة التالية"/>
+     <Button Tag="{StaticResource IconMinus}" Style="{StaticResource WorkspaceTool}" Click="ZoomOut_Click" ToolTip="تصغير" AutomationProperties.Name="تصغير"/>
+     <TextBlock x:Name="ZoomLabel" Text="100%" VerticalAlignment="Center" Margin="4"/>
+     <Button Tag="{StaticResource IconPlus}" Style="{StaticResource WorkspaceTool}" Click="ZoomIn_Click" ToolTip="تكبير" AutomationProperties.Name="تكبير"/>
+     <Button Content="ملاءمة العرض" Style="{StaticResource WorkspaceTool}" Click="Fit_Click"/>
+    </WrapPanel>
+    <ScrollViewer x:Name="PageScroll" Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" FlowDirection="LeftToRight" Padding="10" Background="#DDE5ED">
+     <Grid x:Name="PageSurface" HorizontalAlignment="Center" VerticalAlignment="Top" Background="White" Width="595" Height="842">
+      <Grid.LayoutTransform><ScaleTransform x:Name="PageScale" ScaleX="1" ScaleY="1"/></Grid.LayoutTransform>
+      <Image x:Name="PageImage" Stretch="Fill" IsHitTestVisible="False"/>
+      <Canvas x:Name="OverlayCanvas" Background="Transparent" ClipToBounds="True" MouseLeftButtonDown="Canvas_MouseDown" PreviewMouseLeftButtonDown="Draw_Start" PreviewMouseMove="Draw_Move" PreviewMouseLeftButtonUp="Draw_End" LostMouseCapture="Draw_CaptureLost"/>
+     </Grid>
+    </ScrollViewer>
+   </Grid>
+  </Grid>
+  <Border Grid.Row="3" Padding="10,3" Background="White">
+   <TextBlock x:Name="EditorStatus" Text="جارٍ فتح نسخة للعمل…" TextTrimming="CharacterEllipsis" Foreground="#526477" FontSize="11"/>
+  </Border>
+ </Grid>
+</Window>
