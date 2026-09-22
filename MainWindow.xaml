@@ -60,12 +60,13 @@
   <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
   <Border Background="White" Padding="8,6" BorderBrush="#DCE5EB" BorderThickness="0,0,0,1">
    <DockPanel LastChildFill="True">
-    <Image x:Name="BrandImage" DockPanel.Dock="Right" Source="/HamiPdf;component/Assets/HamiPdf.png" Width="28" Height="28" Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True" Margin="3,0,9,0" ToolTip="الحامي PDF · 0.8.3"/>
+    <Image x:Name="BrandImage" DockPanel.Dock="Right" Source="/HamiPdf;component/Assets/HamiPdf.png" Width="28" Height="28" Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True" Margin="3,0,9,0" ToolTip="الحامي PDF · 0.11.0"/>
     <WrapPanel VerticalAlignment="Center">
      <Button Content="فتح" Style="{StaticResource CompactTool}" Tag="{StaticResource IconOpen}" Click="Open_Click" ToolTip="فتح ملفات PDF — Ctrl+O"/>
      <Button Content="فتح مشروع" Style="{StaticResource CompactTool}" Tag="{StaticResource IconProject}" Click="OpenProject_Click" ToolTip="استكمال مشروع محفوظ"/>
      <Button x:Name="EditButton" Content="تعديل" Style="{StaticResource CompactTool}" Tag="{StaticResource IconEdit}" Click="Edit_Click" IsEnabled="False" ToolTip="إضافة وتعديل النصوص والصور والملاحظات"/>
      <Button x:Name="FormsButton" Content="تعبئة النماذج" Style="{StaticResource CompactTool}" Tag="{StaticResource IconEdit}" Click="Forms_Click" IsEnabled="False" ToolTip="تعبئة حقول آخر نسخة محفوظة وحفظ PDF تفاعلي"/>
+     <Button x:Name="ScanButton" Content="مسح ضوئي" Style="{StaticResource CompactTool}" Tag="{StaticResource IconPages}" Click="Scan_Click" ToolTip="مسح الأوراق من السكانر إلى PDF"/>
      <Button Content="الصفحات" Style="{StaticResource CompactTool}" Tag="{StaticResource IconPages}" Click="Pages_Click" ToolTip="إدارة الصفحات: دمج وترتيب وتدوير واستخراج"/>
      <Button x:Name="PrintButton" Content="طباعة" Style="{StaticResource CompactTool}" Tag="{StaticResource IconPrint}" Click="Print_Click" IsEnabled="False" ToolTip="طباعة المستند النشط"/>
      <Button x:Name="CloseButton" Content="إغلاق" Style="{StaticResource CompactTool}" Tag="{StaticResource IconClose}" Click="Close_Click" IsEnabled="False" ToolTip="إغلاق التبويب النشط"/>

@@ -1,33 +1,11 @@
-# Build output and local IDE state
-**/bin/
-**/obj/
+bin/
+obj/
 .vs/
-.vscode/
 *.user
 *.suo
-artifacts/
 logs/
-form-browser-results/
-TestResults/
-# Local documents, packages and backups
-*.pdf
-*.hamipdf
-*.bak
-*.zip
-*.exe
-*.msi
-*_backup_*/
-Backups/
-upload/
-# Credentials and signing material
-.env
-.env.*
-!.env.example
-*.pfx
-*.p12
-*.key
-*.pem
-*.keystore
 
-# Synthetic form regression fixtures
-!Tests/FormPageChecks/Fixtures/*.pdf
+artifacts/
+*.log
+
+source-upload.json

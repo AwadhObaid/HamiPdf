@@ -1,0 +1,13 @@
+<Window x:Class="HamiPdf.Updates.UpdateWindow"
+ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+ Title="تحديث الحامي PDF" Width="570" Height="480" MinWidth="470" MinHeight="370"
+ WindowStartupLocation="CenterOwner" FlowDirection="RightToLeft" FontFamily="Segoe UI" FontSize="14" Background="#F4F7FA" Icon="/HamiPdf;component/Assets/HamiPdf.ico">
+ <Grid Margin="22"><Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+  <TextBlock x:Name="VersionLabel" FontSize="23" FontWeight="SemiBold" Foreground="#147E70"/>
+  <TextBlock Grid.Row="1" Text="ما الجديد؟" FontWeight="SemiBold" Margin="0,14,0,8"/>
+  <TextBox Grid.Row="2" x:Name="NotesBox" IsReadOnly="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Padding="12"/>
+  <TextBlock Grid.Row="3" Text="يفتح التنزيل في متصفحك. بعد اكتماله، أغلق الحامي PDF وشغّل المثبّت لتحديث البرنامج." TextWrapping="Wrap" Margin="0,14" Foreground="#526477"/>
+  <WrapPanel Grid.Row="4"><Button Content="تنزيل التحديث" Padding="14,8" Margin="3" Background="#DDF3F0" Click="Download_Click"/><Button Content="لاحقًا" Padding="14,8" Margin="3" IsCancel="True"/><Button Content="تجاهل هذا الإصدار" Padding="14,8" Margin="3" Click="Ignore_Click"/></WrapPanel>
+ </Grid>
+</Window>

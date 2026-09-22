@@ -12,6 +12,7 @@ public partial class PageManagerWindow : Window
     private sealed record PageRow(Guid Id, int Order, string SourceName, int OriginalPage, string RotationLabel);
     private sealed record History(List<PageEntry> Pages, Guid Revision);
     private readonly string? initialPath;
+    private readonly string? appendedPath;
     private readonly Dictionary<Guid, SourceRecord> sources = new();
     private readonly Dictionary<Guid, PdfSession> sessions = new();
     private List<PageEntry> pages = [];
@@ -23,9 +24,9 @@ public partial class PageManagerWindow : Window
     public string? SavedPath { get; private set; }
     private bool Dirty => revision != savedRevision;
 
-    public PageManagerWindow(string? path)
+    public PageManagerWindow(string? path, string? appendPath = null)
     {
-        InitializeComponent(); initialPath = path; savedRevision = revision; UpdateButtons();
+        InitializeComponent(); initialPath = path; appendedPath = appendPath; savedRevision = revision; UpdateButtons();
     }
 
     private HashSet<Guid> Selection() => PageList.SelectedItems.Cast<PageRow>().Select(p => p.Id).ToHashSet();
@@ -42,7 +43,9 @@ public partial class PageManagerWindow : Window
 
     private async void Manager_Loaded(object sender, RoutedEventArgs e)
     {
-        if (initialPath != null) await ImportAsync([initialPath], initial: true);
+        if (appendedPath != null && initialPath != null)
+            await ImportAsync([initialPath, appendedPath], initial: false);
+        else if (initialPath != null) await ImportAsync([initialPath], initial: true);
     }
     private async void Import_Click(object sender, RoutedEventArgs e)
     {

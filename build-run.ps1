@@ -3,7 +3,7 @@ $ErrorActionPreference = 'Stop'
 Set-Location $PSScriptRoot
 $logDirectory = Join-Path $PSScriptRoot 'logs'
 New-Item -ItemType Directory -Path $logDirectory -Force | Out-Null
-$logPath = Join-Path $logDirectory ('phase09_' + (Get-Date -Format 'yyyyMMdd_HHmmss') + '.log')
+$logPath = Join-Path $logDirectory ('phase11_' + (Get-Date -Format 'yyyyMMdd_HHmmss') + '.log')
 Start-Transcript -Path $logPath | Out-Null
 try {
     if (!(Get-Command dotnet -ErrorAction SilentlyContinue)) { throw 'Install the .NET 8 SDK using Visual Studio Installer.' }
@@ -25,9 +25,13 @@ try {
     if ($LASTEXITCODE -ne 0) { throw 'File launch IPC checks failed. Send this log for diagnosis.' }
     dotnet run --project .\Tests\FormChecks\FormChecks.csproj -c Release
     if ($LASTEXITCODE -ne 0) { throw 'Interactive form checks failed. Send this log for diagnosis.' }
+    dotnet run --project .\Tests\ScanChecks\ScanChecks.csproj -c Release
+    if ($LASTEXITCODE -ne 0) { throw 'Scanner PDF export checks failed.' }
+    dotnet run --project .\Tests\UpdateChecks\UpdateChecks.csproj -c Release
+    if ($LASTEXITCODE -ne 0) { throw 'Update feed checks failed.' }
     dotnet build .\HamiPdf.csproj -c Debug --no-restore
     if ($LASTEXITCODE -ne 0) { throw 'Build failed. Send this log for diagnosis.' }
-    Write-Host '[OK] Phase 09 build and regression checks completed.'
+    Write-Host '[OK] Phase 11 build and regression checks completed.'
     if (!$NoRun) {
         $appStart = Get-Date
         dotnet run --project .\HamiPdf.csproj -c Debug --no-build

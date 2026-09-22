@@ -1,0 +1,295 @@
+<Project>
+  <PropertyGroup>
+    <AssemblyName>HamiPdf</AssemblyName>
+    <IntermediateOutputPath>obj/Release/net8.0-windows10.0.19041.0/win-x64/</IntermediateOutputPath>
+    <BaseIntermediateOutputPath>obj/</BaseIntermediateOutputPath>
+    <MSBuildProjectExtensionsPath>/workspace/scratch/10f661855162/phase10/HamiPdf/obj/</MSBuildProjectExtensionsPath>
+    <_TargetAssemblyProjectName>HamiPdf</_TargetAssemblyProjectName>
+  </PropertyGroup>
+  <Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk" />
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <Version>0.10.0</Version>
+    <Authors>Awadh Faghmah</Authors>
+    <Company>Awadh Faghmah</Company>
+    <Copyright>Copyright © 2026 Awadh Faghmah. All rights reserved.</Copyright>
+    <DefaultItemExcludes>$(DefaultItemExcludes);artifacts/**</DefaultItemExcludes>
+    <ApplicationIcon>Assets/HamiPdf.ico</ApplicationIcon>
+    <Product>HamiPdf</Product>
+    <Description>عارض الحامي لملفات PDF</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Tests/**/*.cs" />
+    <Content Include="Licenses/**/*" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="Forms/Web/**/*" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.3650.58" />
+    <PackageReference Include="NAPS2.Sdk" Version="1.3.0" />
+    <PackageReference Include="NAPS2.Images.Wpf" Version="1.3.0" />
+    <PackageReference Include="NAPS2.Sdk.Worker.Win32" Version="1.3.0" />
+    <PackageReference Include="PDFsharp" Version="6.2.4" />
+  </ItemGroup>
+  <ItemGroup>
+    <ReferencePath Include="/root/.nuget/packages/microsoft.windowsdesktop.app.ref/8.0.15/ref/net8.0/Accessibility.dll" />
+    <ReferencePath Include="/root/.nuget/packages/google.protobuf/3.29.3/lib/net5.0/Google.Protobuf.dll" />
+    <ReferencePath Include="/root/.nuget/packages/grpc.core.api/2.67.0/lib/netstandard2.1/Grpc.Core.Api.dll" />
+    <ReferencePath Include="/root/.nuget/packages/grpcdotnetnamedpipes/3.1.0/lib/net8.0/GrpcDotNetNamedPipes.dll" />
+    <ReferencePath Include="/root/.nuget/packages/sharpziplib/1.4.2/lib/net6.0/ICSharpCode.SharpZipLib.dll" />
+    <ReferencePath Include="/root/.nuget/packages/makaretu.dns/2.0.1/lib/netstandard2.0/Makaretu.Dns.dll" />
+    <ReferencePath Include="/root/.nuget/packages/naps2.mdns/1.0.1/lib/net6.0/Makaretu.Dns.Multicast.New.dll" />
+    <ReferencePath Include="/root/.nuget/packages/microsoft.bcl.asyncinterfaces/10.0.10/lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/Microsoft.CSharp.dll" />
+    <ReferencePath Include="/root/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/10.0.10/lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll" />
+    <ReferencePath Include="/root/.nuget/packages/microsoft.extensions.logging.abstractions/10.0.10/lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/Microsoft.VisualBasic.Core.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/Microsoft.VisualBasic.dll" />
+    <ReferencePath Include="/root/.nuget/packages/microsoft.web.webview2/1.0.3650.58/lib_manual/netcoreapp3.0/Microsoft.Web.WebView2.Core.dll" />
+    <ReferencePath Include="/root/.nuget/packages/microsoft.web.webview2/1.0.3650.58/lib_manual/netcoreapp3.0/Microsoft.Web.WebView2.WinForms.dll" />
+    <ReferencePath Include="/root/.nuget/packages/microsoft.web.webview2/1.0.3650.58/lib_manual/net5.0-windows10.0.17763.0/Microsoft.Web.WebView2.Wpf.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/Microsoft.Win32.Primitives.dll" />
+    <ReferencePath Include="/root/.nuget/packages/microsoft.windowsdesktop.app.ref/8.0.15/ref/net8.0/Microsoft.Win32.Registry.AccessControl.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/Microsoft.Win32.Registry.dll" />
+    <ReferencePath Include="/root/.nuget/packages/microsoft.windowsdesktop.app.ref/8.0.15/ref/net8.0/Microsoft.Win32.SystemEvents.dll" />
+    <ReferencePath Include="/root/.nuget/packages/microsoft.windows.sdk.net.ref/10.0.19041.56/lib/net8.0/Microsoft.Windows.SDK.NET.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/mscorlib.dll" />
+    <ReferencePath Include="/root/.nuget/packages/naps2.escl/1.3.0/lib/net8.0/NAPS2.Escl.dll" />
+    <ReferencePath Include="/root/.nuget/packages/naps2.images/1.3.0/lib/net8.0/NAPS2.Images.dll" />
+    <ReferencePath Include="/root/.nuget/packages/naps2.images.wpf/1.3.0/lib/net8.0-windows7.0/NAPS2.Images.Wpf.dll" />
+    <ReferencePath Include="/root/.nuget/packages/naps2.internals/1.3.0/lib/net8.0/NAPS2.Internals.dll" />
+    <ReferencePath Include="/root/.nuget/packages/naps2.sdk/1.3.0/lib/net8.0/NAPS2.Sdk.dll" />
+    <ReferencePath Include="/root/.nuget/packages/naps2.sdk.worker.win32/1.3.0/lib/net8.0/NAPS2.Sdk.Worker.Win32.dll" />
+    <ReferencePath Include="/root/.nuget/packages/naps2.wia/2.0.3/lib/net6.0/NAPS2.Wia.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/netstandard.dll" />
+    <ReferencePath Include="/root/.nuget/packages/naps2.ntwain/1.0.1/lib/net6.0/NTwain.dll" />
+    <ReferencePath Include="/root/.nuget/packages/pdfsharp/6.2.4/lib/net8.0/PdfSharp.BarCodes.dll" />
+    <ReferencePath Include="/root/.nuget/packages/pdfsharp/6.2.4/lib/net8.0/PdfSharp.Charting.dll" />
+    <ReferencePath Include="/root/.nuget/packages/pdfsharp/6.2.4/lib/net8.0/PdfSharp.Cryptography.dll" />
+    <ReferencePath Include="/root/.nuget/packages/pdfsharp/6.2.4/lib/net8.0/PdfSharp.dll" />
+    <ReferencePath Include="/root/.nuget/packages/pdfsharp/6.2.4/lib/net8.0/PdfSharp.Quality.dll" />
+    <ReferencePath Include="/root/.nuget/packages/pdfsharp/6.2.4/lib/net8.0/PdfSharp.Shared.dll" />
+    <ReferencePath Include="/root/.nuget/packages/pdfsharp/6.2.4/lib/net8.0/PdfSharp.Snippets.dll" />
+    <ReferencePath Include="/root/.nuget/packages/pdfsharp/6.2.4/lib/net8.0/PdfSharp.System.dll" />
+    <ReferencePath Include="/root/.nuget/packages/pdfsharp/6.2.4/lib/net8.0/PdfSharp.WPFonts.dll" />
+    <ReferencePath Include="/root/.nuget/packages/naps2.pdfsharp/1.0.1/lib/net6.0/PdfSharpCore.dll" />
+    <ReferencePath Include="/root/.nuget/packages/microsoft.windowsdesktop.app.ref/8.0.15/ref/net8.0/PresentationCore.dll" />
+    <ReferencePath Include="/root/.nuget/packages/microsoft.windowsdesktop.app.ref/8.0.15/ref/net8.0/PresentationFramework.Aero.dll" />
+    <ReferencePath Include="/root/.nuget/packages/microsoft.windowsdesktop.app.ref/8.0.15/ref/net8.0/PresentationFramework.Aero2.dll" />
+    <ReferencePath Include="/root/.nuget/packages/microsoft.windowsdesktop.app.ref/8.0.15/ref/net8.0/PresentationFramework.AeroLite.dll" />
+    <ReferencePath Include="/root/.nuget/packages/microsoft.windowsdesktop.app.ref/8.0.15/ref/net8.0/PresentationFramework.Classic.dll" />
+    <ReferencePath Include="/root/.nuget/packages/microsoft.windowsdesktop.app.ref/8.0.15/ref/net8.0/PresentationFramework.dll" />
+    <ReferencePath Include="/root/.nuget/packages/microsoft.windowsdesktop.app.ref/8.0.15/ref/net8.0/PresentationFramework.Luna.dll" />
+    <ReferencePath Include="/root/.nuget/packages/microsoft.windowsdesktop.app.ref/8.0.15/ref/net8.0/PresentationFramework.Royale.dll" />
+    <ReferencePath Include="/root/.nuget/packages/microsoft.windowsdesktop.app.ref/8.0.15/ref/net8.0/PresentationUI.dll" />
+    <ReferencePath Include="/root/.nuget/packages/microsoft.windowsdesktop.app.ref/8.0.15/ref/net8.0/ReachFramework.dll" />
+    <ReferencePath Include="/root/.nuget/packages/simplebase/1.3.1/lib/netstandard1.3/SimpleBase.dll" />
+    <ReferencePath Include="/root/.nuget/packages/sixlabors.fonts/1.0.1/lib/netcoreapp3.1/SixLabors.Fonts.dll" />
+    <ReferencePath Include="/root/.nuget/packages/standardsocketshttphandler/2.2.0.10/lib/netstandard2.1/StandardSocketsHttpHandler.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.AppContext.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Buffers.dll" />
+    <ReferencePath Include="/root/.nuget/packages/microsoft.windowsdesktop.app.ref/8.0.15/ref/net8.0/System.CodeDom.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Collections.Concurrent.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Collections.dll" />
+    <ReferencePath Include="/root/.nuget/packages/system.collections.immutable/10.0.10/lib/net8.0/System.Collections.Immutable.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Collections.NonGeneric.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Collections.Specialized.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.ComponentModel.Annotations.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.ComponentModel.DataAnnotations.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.ComponentModel.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.ComponentModel.EventBasedAsync.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.ComponentModel.Primitives.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.ComponentModel.TypeConverter.dll" />
+    <ReferencePath Include="/root/.nuget/packages/microsoft.windowsdesktop.app.ref/8.0.15/ref/net8.0/System.Configuration.ConfigurationManager.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Configuration.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Console.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Core.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Data.Common.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Data.DataSetExtensions.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Data.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Diagnostics.Contracts.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Diagnostics.Debug.dll" />
+    <ReferencePath Include="/root/.nuget/packages/system.diagnostics.diagnosticsource/10.0.10/lib/net8.0/System.Diagnostics.DiagnosticSource.dll" />
+    <ReferencePath Include="/root/.nuget/packages/microsoft.windowsdesktop.app.ref/8.0.15/ref/net8.0/System.Diagnostics.EventLog.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Diagnostics.FileVersionInfo.dll" />
+    <ReferencePath Include="/root/.nuget/packages/microsoft.windowsdesktop.app.ref/8.0.15/ref/net8.0/System.Diagnostics.PerformanceCounter.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Diagnostics.Process.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Diagnostics.StackTrace.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Diagnostics.TextWriterTraceListener.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Diagnostics.Tools.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Diagnostics.TraceSource.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Diagnostics.Tracing.dll" />
+    <ReferencePath Include="/root/.nuget/packages/microsoft.windowsdesktop.app.ref/8.0.15/ref/net8.0/System.DirectoryServices.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Drawing.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Drawing.Primitives.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Dynamic.Runtime.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Formats.Asn1.dll" />
+    <ReferencePath Include="/root/.nuget/packages/system.formats.nrbf/10.0.10/lib/net8.0/System.Formats.Nrbf.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Formats.Tar.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Globalization.Calendars.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Globalization.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Globalization.Extensions.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.IO.Compression.Brotli.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.IO.Compression.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.IO.Compression.FileSystem.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.IO.Compression.ZipFile.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.IO.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.IO.FileSystem.AccessControl.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.IO.FileSystem.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.IO.FileSystem.DriveInfo.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.IO.FileSystem.Primitives.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.IO.FileSystem.Watcher.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.IO.IsolatedStorage.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.IO.MemoryMappedFiles.dll" />
+    <ReferencePath Include="/root/.nuget/packages/microsoft.windowsdesktop.app.ref/8.0.15/ref/net8.0/System.IO.Packaging.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.IO.Pipes.AccessControl.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.IO.Pipes.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.IO.UnmanagedMemoryStream.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Linq.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Linq.Expressions.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Linq.Parallel.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Linq.Queryable.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Memory.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Net.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Net.Http.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Net.Http.Json.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Net.HttpListener.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Net.Mail.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Net.NameResolution.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Net.NetworkInformation.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Net.Ping.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Net.Primitives.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Net.Quic.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Net.Requests.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Net.Security.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Net.ServicePoint.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Net.Sockets.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Net.WebClient.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Net.WebHeaderCollection.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Net.WebProxy.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Net.WebSockets.Client.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Net.WebSockets.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Numerics.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Numerics.Vectors.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.ObjectModel.dll" />
+    <ReferencePath Include="/root/.nuget/packages/microsoft.windowsdesktop.app.ref/8.0.15/ref/net8.0/System.Printing.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Reflection.DispatchProxy.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Reflection.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Reflection.Emit.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Reflection.Emit.ILGeneration.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Reflection.Emit.Lightweight.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Reflection.Extensions.dll" />
+    <ReferencePath Include="/root/.nuget/packages/system.reflection.metadata/10.0.10/lib/net8.0/System.Reflection.Metadata.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Reflection.Primitives.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Reflection.TypeExtensions.dll" />
+    <ReferencePath Include="/root/.nuget/packages/system.resources.extensions/10.0.10/lib/net8.0/System.Resources.Extensions.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Resources.Reader.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Resources.ResourceManager.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Resources.Writer.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Runtime.CompilerServices.Unsafe.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Runtime.CompilerServices.VisualC.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Runtime.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Runtime.Extensions.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Runtime.Handles.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Runtime.InteropServices.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Runtime.InteropServices.JavaScript.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Runtime.Intrinsics.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Runtime.Loader.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Runtime.Numerics.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Runtime.Serialization.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Runtime.Serialization.Formatters.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Runtime.Serialization.Json.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Runtime.Serialization.Primitives.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Runtime.Serialization.Xml.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Security.AccessControl.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Security.Claims.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Security.Cryptography.Algorithms.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Security.Cryptography.Cng.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Security.Cryptography.Csp.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Security.Cryptography.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Security.Cryptography.Encoding.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Security.Cryptography.OpenSsl.dll" />
+    <ReferencePath Include="/root/.nuget/packages/microsoft.windowsdesktop.app.ref/8.0.15/ref/net8.0/System.Security.Cryptography.Pkcs.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Security.Cryptography.Primitives.dll" />
+    <ReferencePath Include="/root/.nuget/packages/microsoft.windowsdesktop.app.ref/8.0.15/ref/net8.0/System.Security.Cryptography.ProtectedData.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Security.Cryptography.X509Certificates.dll" />
+    <ReferencePath Include="/root/.nuget/packages/microsoft.windowsdesktop.app.ref/8.0.15/ref/net8.0/System.Security.Cryptography.Xml.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Security.dll" />
+    <ReferencePath Include="/root/.nuget/packages/microsoft.windowsdesktop.app.ref/8.0.15/ref/net8.0/System.Security.Permissions.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Security.Principal.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Security.Principal.Windows.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Security.SecureString.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.ServiceModel.Web.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.ServiceProcess.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Text.Encoding.CodePages.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Text.Encoding.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Text.Encoding.Extensions.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Text.Encodings.Web.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Text.Json.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Text.RegularExpressions.dll" />
+    <ReferencePath Include="/root/.nuget/packages/microsoft.windowsdesktop.app.ref/8.0.15/ref/net8.0/System.Threading.AccessControl.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Threading.Channels.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Threading.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Threading.Overlapped.dll" />
+    <ReferencePath Include="/root/.nuget/packages/system.threading.tasks.dataflow/10.0.10/lib/net8.0/System.Threading.Tasks.Dataflow.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Threading.Tasks.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Threading.Tasks.Extensions.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Threading.Tasks.Parallel.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Threading.Thread.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Threading.ThreadPool.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Threading.Timer.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Transactions.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Transactions.Local.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.ValueTuple.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Web.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Web.HttpUtility.dll" />
+    <ReferencePath Include="/root/.nuget/packages/microsoft.windowsdesktop.app.ref/8.0.15/ref/net8.0/System.Windows.Controls.Ribbon.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Windows.dll" />
+    <ReferencePath Include="/root/.nuget/packages/microsoft.windowsdesktop.app.ref/8.0.15/ref/net8.0/System.Windows.Extensions.dll" />
+    <ReferencePath Include="/root/.nuget/packages/microsoft.windowsdesktop.app.ref/8.0.15/ref/net8.0/System.Windows.Input.Manipulations.dll" />
+    <ReferencePath Include="/root/.nuget/packages/microsoft.windowsdesktop.app.ref/8.0.15/ref/net8.0/System.Windows.Presentation.dll" />
+    <ReferencePath Include="/root/.nuget/packages/microsoft.windowsdesktop.app.ref/8.0.15/ref/net8.0/System.Xaml.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Xml.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Xml.Linq.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Xml.ReaderWriter.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Xml.Serialization.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Xml.XDocument.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Xml.XmlDocument.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Xml.XmlSerializer.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Xml.XPath.dll" />
+    <ReferencePath Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/ref/net8.0/System.Xml.XPath.XDocument.dll" />
+    <ReferencePath Include="/root/.nuget/packages/microsoft.windowsdesktop.app.ref/8.0.15/ref/net8.0/UIAutomationClient.dll" />
+    <ReferencePath Include="/root/.nuget/packages/microsoft.windowsdesktop.app.ref/8.0.15/ref/net8.0/UIAutomationClientSideProviders.dll" />
+    <ReferencePath Include="/root/.nuget/packages/microsoft.windowsdesktop.app.ref/8.0.15/ref/net8.0/UIAutomationProvider.dll" />
+    <ReferencePath Include="/root/.nuget/packages/microsoft.windowsdesktop.app.ref/8.0.15/ref/net8.0/UIAutomationTypes.dll" />
+    <ReferencePath Include="/root/.nuget/packages/microsoft.windowsdesktop.app.ref/8.0.15/ref/net8.0/WindowsBase.dll" />
+    <ReferencePath Include="/root/.nuget/packages/microsoft.windows.sdk.net.ref/10.0.19041.56/lib/net8.0/WinRT.Runtime.dll" />
+    <ReferencePath Include="/root/.nuget/packages/zxing.net/0.16.11/lib/net8.0/zxing.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="/workspace/scratch/10f661855162/phase10/HamiPdf/obj/Release/net8.0-windows10.0.19041.0/win-x64/AboutWindow.g.cs" />
+    <Compile Include="/workspace/scratch/10f661855162/phase10/HamiPdf/obj/Release/net8.0-windows10.0.19041.0/win-x64/Editor/EditorWindow.g.cs" />
+    <Compile Include="/workspace/scratch/10f661855162/phase10/HamiPdf/obj/Release/net8.0-windows10.0.19041.0/win-x64/Forms/FormWindow.g.cs" />
+    <Compile Include="/workspace/scratch/10f661855162/phase10/HamiPdf/obj/Release/net8.0-windows10.0.19041.0/win-x64/MainWindow.g.cs" />
+    <Compile Include="/workspace/scratch/10f661855162/phase10/HamiPdf/obj/Release/net8.0-windows10.0.19041.0/win-x64/Pages/PageManagerWindow.g.cs" />
+    <Compile Include="/workspace/scratch/10f661855162/phase10/HamiPdf/obj/Release/net8.0-windows10.0.19041.0/win-x64/Scanning/ScanWindow.g.cs" />
+    <Compile Include="/workspace/scratch/10f661855162/phase10/HamiPdf/obj/Release/net8.0-windows10.0.19041.0/win-x64/App.g.cs" />
+    <Compile Include="/workspace/scratch/10f661855162/phase10/HamiPdf/obj/Release/net8.0-windows10.0.19041.0/win-x64/HamiPdf_Content.g.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="/tmp/hami-dotnet/sdk/8.0.408/Sdks/Microsoft.NET.Sdk/targets/../analyzers/Microsoft.CodeAnalysis.CSharp.NetAnalyzers.dll" />
+    <Analyzer Include="/tmp/hami-dotnet/sdk/8.0.408/Sdks/Microsoft.NET.Sdk/targets/../analyzers/Microsoft.CodeAnalysis.NetAnalyzers.dll" />
+    <Analyzer Include="/root/.nuget/packages/microsoft.extensions.logging.abstractions/10.0.10/analyzers/dotnet/roslyn4.4/cs/Microsoft.Extensions.Logging.Generators.dll" />
+    <Analyzer Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/analyzers/dotnet/cs/Microsoft.Interop.ComInterfaceGenerator.dll" />
+    <Analyzer Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/analyzers/dotnet/cs/Microsoft.Interop.JavaScript.JSImportGenerator.dll" />
+    <Analyzer Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/analyzers/dotnet/cs/Microsoft.Interop.LibraryImportGenerator.dll" />
+    <Analyzer Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/analyzers/dotnet/cs/Microsoft.Interop.SourceGeneration.dll" />
+    <Analyzer Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/analyzers/dotnet/cs/System.Text.Json.SourceGeneration.dll" />
+    <Analyzer Include="/tmp/hami-dotnet/packs/Microsoft.NETCore.App.Ref/8.0.15/analyzers/dotnet/cs/System.Text.RegularExpressions.Generator.dll" />
+    <Analyzer Include="/root/.nuget/packages/microsoft.windows.sdk.net.ref/10.0.19041.56/analyzers/dotnet/cs/WinRT.SourceGenerator.dll" />
+  </ItemGroup>
+  <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
+</Project>

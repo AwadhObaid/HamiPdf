@@ -1,0 +1,67 @@
+<Window x:Class="HamiPdf.Scanning.ScanWindow"
+ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+ Title="المسح الضوئي — الحامي PDF" Icon="/HamiPdf;component/Assets/HamiPdf.ico"
+ Width="1050" Height="760" MinWidth="830" MinHeight="620" WindowStartupLocation="CenterOwner"
+ FlowDirection="RightToLeft" FontFamily="Segoe UI" FontSize="14" Background="#F2F5FA"
+ Loaded="Window_Loaded" Closing="Window_Closing" Closed="Window_Closed">
+ <Window.Resources>
+  <Style TargetType="Button"><Setter Property="Padding" Value="12,7"/><Setter Property="Margin" Value="3"/><Setter Property="MinHeight" Value="34"/></Style>
+  <Style TargetType="ComboBox"><Setter Property="Margin" Value="3,4"/><Setter Property="MinHeight" Value="32"/><Setter Property="VerticalContentAlignment" Value="Center"/></Style>
+ </Window.Resources>
+ <Grid Margin="16">
+  <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+  <StackPanel>
+   <TextBlock Text="من الورق إلى PDF" FontSize="25" FontWeight="SemiBold" Foreground="#15324D"/>
+   <TextBlock Text="اختر الماسح ثم امسح الأوراق. يمكنك مراجعة الصفحات قبل حفظها." Foreground="#526477" Margin="0,4,0,12"/>
+  </StackPanel>
+  <Border Grid.Row="1" Background="White" Padding="10" CornerRadius="8" Margin="0,0,0,12">
+   <StackPanel>
+    <Grid x:Name="SettingsPanel">
+     <Grid.ColumnDefinitions><ColumnDefinition Width="210"/><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+     <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+     <StackPanel><TextBlock Text="طريقة الاتصال"/><ComboBox x:Name="BackendBox" SelectionChanged="Backend_Changed">
+      <ComboBoxItem Content="WIA — تعريف Windows"/><ComboBoxItem Content="TWAIN — ‏32 بت"/>
+      <ComboBoxItem Content="TWAIN — ‏64 بت"/><ComboBoxItem Content="TWAIN — تعريف قديم"/>
+      <ComboBoxItem Content="الشبكة — eSCL / AirScan"/>
+     </ComboBox></StackPanel>
+     <StackPanel Grid.Column="1"><TextBlock Text="الماسح الضوئي"/><ComboBox x:Name="DeviceBox" DisplayMemberPath="Name" SelectionChanged="Device_Changed"/></StackPanel>
+     <Button Grid.Column="2" Content="بحث عن الأجهزة" VerticalAlignment="Bottom" Click="Discover_Click"/>
+     <WrapPanel Grid.Row="1" Grid.ColumnSpan="3">
+      <StackPanel Width="190"><TextBlock Text="مصدر الورق"/><ComboBox x:Name="SourceBox" SelectedIndex="0"><ComboBoxItem Content="السطح الزجاجي"/><ComboBoxItem Content="مغذّي الأوراق"/><ComboBoxItem Content="المغذّي — وجهان"/></ComboBox></StackPanel>
+      <StackPanel Width="145"><TextBlock Text="الألوان"/><ComboBox x:Name="ColorBox" SelectedIndex="0"><ComboBoxItem Content="ملون"/><ComboBoxItem Content="رمادي"/><ComboBoxItem Content="أبيض وأسود"/></ComboBox></StackPanel>
+      <StackPanel Width="130"><TextBlock Text="الدقة DPI"/><ComboBox x:Name="DpiBox" SelectedIndex="1"><ComboBoxItem Content="150"/><ComboBoxItem Content="300"/><ComboBoxItem Content="600"/></ComboBox></StackPanel>
+      <StackPanel Width="140"><TextBlock Text="حجم الورق"/><ComboBox x:Name="SizeBox" SelectedIndex="0"><ComboBoxItem Content="A4"/><ComboBoxItem Content="A5"/><ComboBoxItem Content="Letter"/><ComboBoxItem Content="Legal"/></ComboBox></StackPanel>
+     </WrapPanel>
+     <CheckBox Grid.Row="2" Grid.ColumnSpan="3" x:Name="NativeUiBox" Content="استخدام نافذة تعريف الماسح (إعداداتها تتقدّم على الخيارات أعلاه)" Margin="4,8"/>
+    </Grid>
+    <TextBlock Text="توفر المصدر والوجهين والدقة يعتمد على الجهاز. إذا لم يظهر الماسح، جرّب طريقة اتصال أخرى أو ثبّت تعريف الشركة." FontSize="12" TextWrapping="Wrap" Foreground="#526477"/>
+    <StackPanel Orientation="Horizontal" Margin="0,6,0,0">
+     <Button x:Name="ScanButton" Content="بدء المسح / إضافة أوراق" Background="#DDF3F0" Click="Scan_Click"/>
+     <Button x:Name="CancelButton" Content="إيقاف العملية" Click="Cancel_Click" IsEnabled="False"/>
+    </StackPanel>
+   </StackPanel>
+  </Border>
+  <Grid Grid.Row="2">
+   <Grid.ColumnDefinitions><ColumnDefinition Width="240"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+   <DockPanel Margin="0,0,12,0">
+    <WrapPanel x:Name="EditPanel" DockPanel.Dock="Bottom" Margin="0,8,0,0">
+     <Button Content="أعلى" Click="Up_Click"/><Button Content="أسفل" Click="Down_Click"/>
+     <Button Content="تدوير ↻" Click="Rotate_Click"/><Button Content="حذف" Click="Delete_Click"/>
+    </WrapPanel>
+    <ListBox x:Name="PageList" SelectionChanged="Page_Selected" DisplayMemberPath="Label"/>
+   </DockPanel>
+   <Border Grid.Column="1" Background="#DFE6ED" CornerRadius="8" Padding="10" ClipToBounds="True">
+    <Grid><TextBlock x:Name="EmptyPreview" Text="ستظهر معاينة الصفحة هنا" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#526477"/>
+     <Image x:Name="PreviewImage" Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality" FlowDirection="LeftToRight"/>
+    </Grid>
+   </Border>
+  </Grid>
+  <TextBlock x:Name="StatusText" Grid.Row="3" Text="جاهز" TextWrapping="Wrap" Margin="2,10" Foreground="#15324D"/>
+  <WrapPanel Grid.Row="4" HorizontalAlignment="Left">
+   <Button x:Name="SaveButton" Content="حفظ PDF وفتحه" Click="Save_Click"/>
+   <Button x:Name="AppendButton" Content="حفظ ثم إضافة للمستند المفتوح" Click="Append_Click"/>
+   <Button Content="إغلاق" Click="Close_Click"/>
+  </WrapPanel>
+ </Grid>
+</Window>

@@ -1,14 +1,28 @@
-# 0.9.2
+# 0.11.0 — GitHub update feed and release publishing
 
-- Preserve interactive AcroForm fields and values when reordering, rotating, merging or extracting pages.
-- Isolate same-named fields from different documents, validate field trees and appearances before saving.
-- Verify published UI and perform clean Release generation to prevent stale installer resources.
-- Use software rendering compatibility settings and release WebView2 controllers before window teardown.
-- Record shutdown stages and capture Windows crash events when the application exits abnormally.
+- Includes scanner 0.10.0, user-confirmed successful on Windows.
+- Daily optional startup check and manual About dialog check.
+- Strict stable version/official installer asset validation, release notes, later/ignore/download actions.
+- Browser download initiated by user; no background installer execution.
+- Source upload with pinned baseline and source integrity manifest; separate public installer repository bootstrap.
+- Publish as draft, read back/check uploaded installer hashes, then publish as latest; never overwrite a published version.
+- Connector write returned HTTP 403. Source/repository/release publication must run with the provided scripts on the user's Windows account.
 
-Validation: cross-build and page/form regression checks passed during development. On 2026-09-17 the user confirmed the 0.9.2 Windows trial succeeded after the shutdown fix.
+# 0.10.0 — Scanner integration
 
-WebView2 GPU-disable flag remains a compatibility workaround; advanced PDF scripting, XFA and digital-signature page operations are not supported.
+- Arabic scan dialog: WIA, TWAIN x86, TWAIN x64, legacy TWAIN and eSCL discovery.
+- Flatbed/feeder/duplex requests; color/gray/monochrome; 150/300/600 dpi; A4/A5/Letter/Legal; optional native driver UI.
+- Disk-backed completed PNG pages, preview, reorder, quarter-turn rotation, delete, repeated scans and cancellation.
+- Atomic new-file PDF export with page-count, rotation and dimensions readback. Existing files never overwritten.
+- Save-and-append opens the existing form-preserving page manager; scanned PDF saved separately first.
+- Per-user preferences; bounded diagnostic log; defer disposal until driver operation/export finishes.
+- Pinned NAPS2 SDK 1.3.0 with x86 worker; separate native x64 context; bundled x86/x64 TWAIN DSM.
+- Installer verifies scanner files and compiled scanner UI. Windows scanner/hardware acceptance pending.
+
+## 0.9.2 — Validate published UI
+- Invalidate generated Release WPF output before publishing.
+- Verify actual compiled About button, developer text and high-resolution logo before building Setup.
+- Verify source copy and installed assembly hashes.
 
 ## 0.8.2 — About and toolbar logo
 - About window with live assembly version, description, Awadh Faghmah credit and copyright.

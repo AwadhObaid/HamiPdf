@@ -1,0 +1,1602 @@
+{
+  "version": "0.11.0",
+  "baseCommit": "4a1dce8a254d22bef40e101907c0ab7bcb2c13ee",
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "5CBAE1FD597F52D8170099CEE5040912421DBC3D4FCE0E55C1679334D6D966C7"
+    },
+    {
+      "path": "AboutWindow.xaml",
+      "sha256": "DEAEE65DE2646F181B8D7B046E890D71229CA047E60381053B5DCB971A77CC1A"
+    },
+    {
+      "path": "AboutWindow.xaml.cs",
+      "sha256": "EF89B2B8F09A8EC3BDB551EF01293D6FCC79D813570332E8399890F4CE18F857"
+    },
+    {
+      "path": "App.xaml",
+      "sha256": "8A8886BF628F196BB47413E2640AC53434FD847CF624F5689DA76FFD3CC0A5B9"
+    },
+    {
+      "path": "App.xaml.cs",
+      "sha256": "C258B4A2C469B9401DB4B5E1808F9DD00297CB8E1E9685AF88E3BA3FB392F0C4"
+    },
+    {
+      "path": "AssemblyInfo.cs",
+      "sha256": "0AC596DF13AAC629A714FD9ECD7B49D53A2DB8F788524DB8783925BCDADF8817"
+    },
+    {
+      "path": "Assets/HamiPdf.ico",
+      "sha256": "B676DA09B6FB46FA6A80FD2CD939FC604B436AE7E54C7B431F89109BA7F31317"
+    },
+    {
+      "path": "Assets/HamiPdf.png",
+      "sha256": "39A42969BA7647848BBEA5F13A0D39F3DB6ED0173C9AA267277AFA80986E4B60"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "28239E2DC8E48181981DD8F0304B1D085989C6FFA4E09B852592506FDD38367D"
+    },
+    {
+      "path": "Editor/EditorWindow.Drawing.cs",
+      "sha256": "1FD4AD46694D0E1C61ADB2256D3F1E8502399EF990AD20C9450E3EBCC1976B35"
+    },
+    {
+      "path": "Editor/EditorWindow.Project.cs",
+      "sha256": "4D8350FBEDE5D18FF26D54CDA79BE39CC65426DD272FE20A76BE5B4FAA69A9E0"
+    },
+    {
+      "path": "Editor/EditorWindow.xaml",
+      "sha256": "08297E2235DDFAF156A606DECA7EC0672B73FBF8E235F635EF0180B25F9406B5"
+    },
+    {
+      "path": "Editor/EditorWindow.xaml.cs",
+      "sha256": "8E83A88900B2D26DAD085CCE22A0F33FE1B2F2438EC5AEDF81DD33956AE5B4CD"
+    },
+    {
+      "path": "Editor/OverlayItem.cs",
+      "sha256": "EBE30542A1E1FF5780C84E470C55DBEFEFA88C7974A402EE628062EF5E3BB9B8"
+    },
+    {
+      "path": "Editor/OverlayVisual.cs",
+      "sha256": "EDC5B155D0F1BA7924259BB3E9937977806D543040038A12E4C7293804DA2733"
+    },
+    {
+      "path": "Editor/PageGeometry.cs",
+      "sha256": "C8DF38C1134016A877FFACAADC6024D4F769DD8AD7EFBD836549DF5FC4A13557"
+    },
+    {
+      "path": "Editor/PdfExport.cs",
+      "sha256": "52F2675965553D732B0D8A4FD497EAFF50A2A23E8C61E7773689699D69587730"
+    },
+    {
+      "path": "Editor/PdfSession.cs",
+      "sha256": "4E888767673879E57353423DCB216162E4F4B7BB5D697873AEC93B7A5BE92E3B"
+    },
+    {
+      "path": "Editor/ProjectArchive.cs",
+      "sha256": "736163229CB8B395373D48C3D6323D1EB02E4A099774B09334E07557A1CB2105"
+    },
+    {
+      "path": "Editor/StrokeGeometry.cs",
+      "sha256": "D449926BE694FB0933F6E412C7169912271B84EEDC72D40E876A6750F379CB79"
+    },
+    {
+      "path": "Forms/AtomicPdfSave.cs",
+      "sha256": "567AE7235D44613D770B6D4138BFEEE106B378C3D30111FFE7288C44471D0465"
+    },
+    {
+      "path": "Forms/FormAppearance.cs",
+      "sha256": "985FD0AC4058FE9237F808FD7CF949D2D071A494ABB0232FB1C6AB218E5B7B54"
+    },
+    {
+      "path": "Forms/FormWindow.xaml",
+      "sha256": "41C017C627984D633BA9BC813BFFF6C5A7F26DC2357C393039B79418E2748D65"
+    },
+    {
+      "path": "Forms/FormWindow.xaml.cs",
+      "sha256": "070B23DE38752523C3D1D3E044D320EE3DDDD292C7CC12A3B523921BD566035A"
+    },
+    {
+      "path": "Forms/Web/forms.css",
+      "sha256": "D0823CD62DE72B6FDB0BDA714F298DB107C7BF91A580543EA8DCD30684477FA6"
+    },
+    {
+      "path": "Forms/Web/forms.mjs",
+      "sha256": "95C1BAECB9B4B2A9F24186CC9DFB8E590CF43D98C4B1FA10F69AD24371525EFA"
+    },
+    {
+      "path": "Forms/Web/index.html",
+      "sha256": "4105DDC554BC4FD63C9CCE98AF303EC92D3D197598FA6523538C26D4EF08DDF5"
+    },
+    {
+      "path": "Forms/Web/pages.html",
+      "sha256": "33E636C7A745F4CF90BC5A602CCFD1E6DA4FEEEE4C804A7531DF2A08AC648A88"
+    },
+    {
+      "path": "Forms/Web/pages.mjs",
+      "sha256": "A2DFCD0A8C4439C404E2D92A4889D598E618294F861D99C150855A00FA1FA64A"
+    },
+    {
+      "path": "Forms/Web/pdfjs/LICENSE",
+      "sha256": "0D542E0C8804E39AA7F37EB00DA5A762149DC682D7829451287E11B938E94594"
+    },
+    {
+      "path": "Forms/Web/pdfjs/build/pdf.mjs",
+      "sha256": "91E29F812C593904E8D48D022DB5DDF93E3443575D4765AC9BFBB42494CFBD8D"
+    },
+    {
+      "path": "Forms/Web/pdfjs/build/pdf.worker.mjs",
+      "sha256": "DF3BF6BF6B8B8DAC8A4042D8C4ECF1CF21E1D197E0FE231C192122409EBA656B"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/78-EUC-H.bcmap",
+      "sha256": "D92A261336DC18B8C03A46EB4D462382D33F4338FA195D303256B2031434C874"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/78-EUC-V.bcmap",
+      "sha256": "61670BEBC4E4827B67230C054FD0D820D6E30C3584D02E386804E62BBEDC032A"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/78-H.bcmap",
+      "sha256": "ECE6415B853D61E1B2560165151407D35CF16E6556932B85A13EA75276B77402"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/78-RKSJ-H.bcmap",
+      "sha256": "696B1F973C97623496703809EAAA5F9B40696C77540057413F4B826A08EDFA7B"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/78-RKSJ-V.bcmap",
+      "sha256": "53CB6D560AB377DA48CF65D6DCACB0BDB31F13FAB7066C580DE38C12A73A7FF9"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/78-V.bcmap",
+      "sha256": "289000F02FD34872B6975503217F33ABAE6BEE676E7D28F640473A67C8DB1712"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/78ms-RKSJ-H.bcmap",
+      "sha256": "A2442595218F5F8BD8E1B42188E368587D876CFE0CC4CD87196F077C878F72E2"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/78ms-RKSJ-V.bcmap",
+      "sha256": "F8DDCEBA96BFD9D3740BD1789EE30D1F47C78371520A8084F71F7DF58F19BE0B"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/83pv-RKSJ-H.bcmap",
+      "sha256": "44040051EC818FE09B9703472BEA72EFD2759D5EEB5FF0D77C718D6BB5E6D1DF"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/90ms-RKSJ-H.bcmap",
+      "sha256": "C13E043E85FF715B75BB03801E8FD0FB8F3A75E4A48496FAA6BAAF92B5B48BA1"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/90ms-RKSJ-V.bcmap",
+      "sha256": "499BB916CE1ADBE4289B6E5811F4DC20EB238CDC2FFAD20CF26AE56716885BAB"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/90msp-RKSJ-H.bcmap",
+      "sha256": "7B8B3B8BBF821702E9A4DF9F3596CE292380C8C1B0925DEDADBB4E4B2D80498B"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/90msp-RKSJ-V.bcmap",
+      "sha256": "6296C2B5C07DCA8128E96D5296D621A3268803D4FA0E5812A21E52FE2802AACB"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/90pv-RKSJ-H.bcmap",
+      "sha256": "FB5103F03D3A34547E18D316E52B6D9B26E485C662999222F84D2BA54C2E4FA8"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/90pv-RKSJ-V.bcmap",
+      "sha256": "7BCB5AD2BA55B9662CE379E16C2D9CC2B82D621A579807353741172E4AF615C2"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/Add-H.bcmap",
+      "sha256": "A2FFAB28B990998181BCCA9B0E914BB2207820F100AE31D5C469444892E5AD8E"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/Add-RKSJ-H.bcmap",
+      "sha256": "B29F4B52E2465D0485856D5E69F1BA69927DEB2848D8FD328C8035583B35BB7E"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/Add-RKSJ-V.bcmap",
+      "sha256": "2AA2232C283A3F5D0997C2834A36CEAD0B79CE2657944CFEED08140C293460FF"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/Add-V.bcmap",
+      "sha256": "25125D3B1BE64E86B2DF5B3344170B45A42BCAA0B46E43A34314EF73C166E542"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/Adobe-CNS1-0.bcmap",
+      "sha256": "8C65BE9D51A9F269A547DC12460707AAF4031AB67EBE8A2900F4B4CC6B3E450E"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/Adobe-CNS1-1.bcmap",
+      "sha256": "73152BC1A59CC594B414AC6068BE48E5512B96AE85920C40E32A99269FDB0C04"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/Adobe-CNS1-2.bcmap",
+      "sha256": "A1B8D353BDEF9584C820464E8F1C9E2013D64EBF433CBA0AA831DDDF515818C2"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/Adobe-CNS1-3.bcmap",
+      "sha256": "2FFC0C75C79FAFDE506163D3C08C390D183251009F3FBF6AE50D1167D14B9570"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/Adobe-CNS1-4.bcmap",
+      "sha256": "98A1F470C878C6B9691A4D7AEF776AF8AC9B55F5587C9FAFA00547F3BF655716"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/Adobe-CNS1-5.bcmap",
+      "sha256": "DDD6E29955EB8CB545F2EBD09C628C3BBDA5023256EDA1B728F743C75FB77829"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/Adobe-CNS1-6.bcmap",
+      "sha256": "317BB2DB71E0E5B7B0C47B75DE1DA915C2E22F65F0C0861507F9CA7BA238F8A2"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/Adobe-CNS1-UCS2.bcmap",
+      "sha256": "E665837F2197C6BD08CD8955AD4D6932CEE2398E2E328B25B00E6BFB3BD72AF9"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/Adobe-GB1-0.bcmap",
+      "sha256": "8B81CCE8A11D510E505704953CFA4E4AB080C1A0CAB991145A3512EE433946B9"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/Adobe-GB1-1.bcmap",
+      "sha256": "0426983081788EC7202703E71F1EFA4B860F75B936994236010B39D89251A81E"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/Adobe-GB1-2.bcmap",
+      "sha256": "E67B37A83B160AB3831306A71A605893B24454EE81AC9B6123BF2D3984D268D5"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/Adobe-GB1-3.bcmap",
+      "sha256": "AA299AFC3E12A28726147305F191BE28C7498078C8B182ECE7886AC79CD99078"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/Adobe-GB1-4.bcmap",
+      "sha256": "8FBD7D74C2DDB1350C1CECCE54A73FDE3F5453093D4BED445283EC0033D2097F"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/Adobe-GB1-5.bcmap",
+      "sha256": "C22CB2FCFF24112FA31DAB2111BDC51957006576D31AAD5A25E67793AC01428C"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/Adobe-GB1-UCS2.bcmap",
+      "sha256": "20507620260C0C935C35AFC1E70E5888AA7125D5EC7FFC03CEF1959FEB2C1641"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/Adobe-Japan1-0.bcmap",
+      "sha256": "464F08905236F5703B1F5CF8358767C8B18E6BCC808840D081F1DE2C7AB38134"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/Adobe-Japan1-1.bcmap",
+      "sha256": "4C823848722187D1FFE75AE3F5F9126CCD2D7895A05FAD14C919FB119E037008"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/Adobe-Japan1-2.bcmap",
+      "sha256": "7810FB808E367E70429E90A9478FE6A3FDC3E214F25C7582CE9C2DA6A242315C"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/Adobe-Japan1-3.bcmap",
+      "sha256": "84DEB1828711AD3D390C9899C38ABCE1BF619D65FF7BF1A326EC95ACC45F08F8"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/Adobe-Japan1-4.bcmap",
+      "sha256": "3F8A4F974919C2B8BAE5D10175FFA2673BE140481E00840542C85D48EF184067"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/Adobe-Japan1-5.bcmap",
+      "sha256": "1D3CE4FF28D977F8CF37A912AE4EC811F4175C3167B1EC0B2567FEEC3E79E1DB"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/Adobe-Japan1-6.bcmap",
+      "sha256": "5609797B9401B30BE72EF9645DA62A87829F058C3BE4B5C623383119F584B1D9"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/Adobe-Japan1-UCS2.bcmap",
+      "sha256": "66C5D0DC4964F4093E77B194023F3A0F689324028EC8330E1E1D0570BCBA7C2F"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/Adobe-Korea1-0.bcmap",
+      "sha256": "DFB8C3874F0E5A8C3ACF597D2C12D2B63E90BC5E4F0FCE990EC4C56077D80B32"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/Adobe-Korea1-1.bcmap",
+      "sha256": "62F277B7B1C441C007797AE707D5C37258D029CE4661A2B911E2E1EE35E6ADC1"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/Adobe-Korea1-2.bcmap",
+      "sha256": "1D77068AF462F96D7AD28AD7E7D43EEF6423C685B479D7DC25FF5DF38DB0380D"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/Adobe-Korea1-UCS2.bcmap",
+      "sha256": "857B723088BE97255053562BFA41BD1075A7F7910D3BAB59A0645C8BBC7060FF"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/B5-H.bcmap",
+      "sha256": "718AD0FFBEF4C34F8F3F31292C462E519CD567A5511FC8B346C60010D64F4EF9"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/B5-V.bcmap",
+      "sha256": "B5C37383517477620CED927B6B4FFD4F4CC6230D8051B5B46A21D6768E07F7D8"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/B5pc-H.bcmap",
+      "sha256": "BAB6028AEAD1D6149400E904AB10CFD319082D826473ED4C582C8EEED920F17E"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/B5pc-V.bcmap",
+      "sha256": "41543142B9767F3B76133899FC8453282B01AD3C653ACAEEA42D78C5A7D08C63"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/CNS-EUC-H.bcmap",
+      "sha256": "E8F89CD61E6486B948205DA46499D659ED0AED949B7095FD3C8E95FFE2B0E7A9"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/CNS-EUC-V.bcmap",
+      "sha256": "CAE422BEC2AC6DBE86BF921CEC942BACD2D0B733FFCCA5F91B3BA14E917025A0"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/CNS1-H.bcmap",
+      "sha256": "E8487971AB20CD16F3DE3E8AC56EC994B72B658AD113F2818239DFD5108F501A"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/CNS1-V.bcmap",
+      "sha256": "42DF8076AAA7574505E7304AF83A3323EC032C4177D64B1309DB8C043D594A8A"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/CNS2-H.bcmap",
+      "sha256": "BC6024D274D440F0625C69E25F37036EF6CB6689432CEAA160D3432A2A716CA7"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/CNS2-V.bcmap",
+      "sha256": "2E4F70A8AFD23A121030FC2E5B5F3816E903B11E7BA8B8C09654B31C80399C38"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/ETHK-B5-H.bcmap",
+      "sha256": "D2F10FA519336BC4EFCC7B6DEB9604B75429946B40D82E311CB3A97A1994C89A"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/ETHK-B5-V.bcmap",
+      "sha256": "1FEA3FD0D9F0F679F80505800851EF2E4131D81127E18C006938FFA2F4C8B247"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/ETen-B5-H.bcmap",
+      "sha256": "87EE6B3F5BFDA5FE26FA35431264C7D73070D10DBBF398A75185D63AE322C18D"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/ETen-B5-V.bcmap",
+      "sha256": "47DC0D2C21E3BDE317947AEC1675CEABC1D5460A60BF9C24334B8C407A17172C"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/ETenms-B5-H.bcmap",
+      "sha256": "D5F5A73DA4173B7DA9A3A20E16F26F9CD5D12DEB1553409919E0CEC6FD37FDEE"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/ETenms-B5-V.bcmap",
+      "sha256": "18252FCA90F472F479AF1BDDD60D6AB51C8E1B55DCF6845951426504934543E0"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/EUC-H.bcmap",
+      "sha256": "F9939CD57FCCDC65C5D9F4C205FD497EBDBD283643308DA5663801A8C1D9C595"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/EUC-V.bcmap",
+      "sha256": "1283A50A706507C4436DA83EDE9AD7A4440BE25378F2E96F6C81A430081426A3"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/Ext-H.bcmap",
+      "sha256": "4000ED4E61A1C668EF453BBD0603CFA383DEFA793ABD46A57ED870D7F527350B"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/Ext-RKSJ-H.bcmap",
+      "sha256": "E0D2F0DF337660E73813238DD4A725F11F0621B90F3273857DB253D0E7694CAA"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/Ext-RKSJ-V.bcmap",
+      "sha256": "F617A22B6D67FEBB187990952006C91A9F5A4DB21155D268C656252D0C21985D"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/Ext-V.bcmap",
+      "sha256": "C2087FB845A9E3ACEA0C2922CD40E6AF67E11957BEC74DCD597F1285EDD490CE"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/GB-EUC-H.bcmap",
+      "sha256": "928BAD06FD84A48F5BA7150D7716609119FB660F2AAA73ECCAD81DDAB9B9D203"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/GB-EUC-V.bcmap",
+      "sha256": "A9AD88AC2479DA529B16DC48ABC5952332E27BC355335F91DF5729A587533324"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/GB-H.bcmap",
+      "sha256": "1018C777A8910B5BB46D7D54A4AEE9D51CA5CFF8ADDB2B41C969D9101CB3FD1C"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/GB-V.bcmap",
+      "sha256": "0B96789143C0BBF9F1641AE7165B3456DCCD14DABFFCBB0BD654D5BF6F94F863"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/GBK-EUC-H.bcmap",
+      "sha256": "2103FED28650EDE096A2281104A1A8A4304DAE0DB414342C636867522307123B"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/GBK-EUC-V.bcmap",
+      "sha256": "A7FD35DD14D9DBDB955F34E6C0630618B6620DFD09D4283B2F65A65CE77FCAEA"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/GBK2K-H.bcmap",
+      "sha256": "3D919AE72AF16C5CC6846EC87A4326A9F125E493C59D3628429D35C2C95FE8C4"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/GBK2K-V.bcmap",
+      "sha256": "B927FDFD595C07CE9158BF2EC13F4641B2E83B01C70989DADFABD6ED7C6AC2DC"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/GBKp-EUC-H.bcmap",
+      "sha256": "D15EBD8E81FB4FE8A244F1B1E877922E03500AC69EDDF5001093E502430451D2"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/GBKp-EUC-V.bcmap",
+      "sha256": "FDC736D46E642625DCCC8AD8C59F2C69FC7DB7A13F2E799C6C6B779E707BB97A"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/GBT-EUC-H.bcmap",
+      "sha256": "DC5F44E48A39F3367AE28665027D8AB1D8CEDB5A9DCC5068A900ACD6709F60F9"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/GBT-EUC-V.bcmap",
+      "sha256": "A1AD24E63653B8AA388C18FA5E498F007564E43DDE699A9F91CCB4645C999BE8"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/GBT-H.bcmap",
+      "sha256": "8AFDA745A505763F3FF54C8126EEB48EF376EA9ED07D9F42FF9A22C5C547EC57"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/GBT-V.bcmap",
+      "sha256": "CDC2EC5C3C7C7033290C9A8894878202F08674EB9B1AE7D36218430326768771"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/GBTpc-EUC-H.bcmap",
+      "sha256": "7B23E2F7BFDB6C918F567B7324BF858F398BD8CD5F268D74ECE19A3C91BF4F32"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/GBTpc-EUC-V.bcmap",
+      "sha256": "D7A1B13EAD9AB511CF2CD01DE6CE8B02AA8E8767E84895337D7A3B67F039F93B"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/GBpc-EUC-H.bcmap",
+      "sha256": "3C4A4EB82F05ABE51F6650985C630E180438BFDD491318F5D20D2EC29236E1C3"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/GBpc-EUC-V.bcmap",
+      "sha256": "215BDFA2842705624B4CF4CD29B8E3C720F1E192365E0305C11030A424C84D7C"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/H.bcmap",
+      "sha256": "A0233E21047EC00B852125B243CBCF30ABEE511155B6D8159C24F944384BC9EE"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/HKdla-B5-H.bcmap",
+      "sha256": "5242BCE18FB13AB4CC59B146A03EBA36E4CE42667EEFF09E10981A9D2AA4996B"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/HKdla-B5-V.bcmap",
+      "sha256": "2E0537F786C0791D41A925F72BAD2D4E7268AA6CBF15A1400A722672CEC38E2C"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/HKdlb-B5-H.bcmap",
+      "sha256": "FDC8159984BF5DBE475C0D5DFCB621ECEE4DEA07C38C668BD77F4C679E23B9B3"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/HKdlb-B5-V.bcmap",
+      "sha256": "B249EB9DCB915AB45057C5D4D7AA55EF88D0EFBB092AF6BAE0B2D4705D139ABF"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/HKgccs-B5-H.bcmap",
+      "sha256": "AB64C7FC5E9B2E97750CC4F269B0DA14FD8649E49151B7598C8DF86599BAC591"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/HKgccs-B5-V.bcmap",
+      "sha256": "02EBDF7CDFFB5395FB21091CD58A013A18AE5388922822F9DC6292EF16B98956"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/HKm314-B5-H.bcmap",
+      "sha256": "BFD8BBDE6B36A9DA4C1C902C74121A30D9807A7079A00EEEA218BE6ADC223CEF"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/HKm314-B5-V.bcmap",
+      "sha256": "2A64A815CFB6FDD480674A868762E3D161FDA17543B20C9209978559F0667164"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/HKm471-B5-H.bcmap",
+      "sha256": "49D7C037758826B5B6C0FA329C35BBF25D3943197754E72ECD30C6FB04D745E6"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/HKm471-B5-V.bcmap",
+      "sha256": "BE24C109E78AA4FE3C1F27D30AAB3ED0741E783FA1B6B6C2719741072B54B132"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/HKscs-B5-H.bcmap",
+      "sha256": "08599378F41D96B40537ADEF6E6EDCC4A787BC63F5ACCF47C026DF4905A13914"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/HKscs-B5-V.bcmap",
+      "sha256": "D073542B7DAD1C4CBF01C1AF5F0CD13218D1281A491956E310C55702FC8705C4"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/Hankaku.bcmap",
+      "sha256": "B454701F7AECD7856769016DFD04CA64280A060F2C67A2466D50B4395D24974E"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/Hiragana.bcmap",
+      "sha256": "2ED669394756DD9458651CD9995AB29AB691ECB7686659003306CDF22767A414"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/KSC-EUC-H.bcmap",
+      "sha256": "6784E16DBC5861C036C23D3E55F0D4BA0975A3E464DA0EE8E49BCFFF0BE070C4"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/KSC-EUC-V.bcmap",
+      "sha256": "FDB36BAD85E9924823D49DB374067988E024CF80FC894711F2C9178951CBBE95"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/KSC-H.bcmap",
+      "sha256": "C1F6D61F1D3304FD539A65AE72624FA567ECC3853BF52E283958A7A2515B3EEE"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/KSC-Johab-H.bcmap",
+      "sha256": "939993D213F68DB763BF156217C217AE23AF082B91A0EACECF3D11EB4FF8EF8C"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/KSC-Johab-V.bcmap",
+      "sha256": "5D61967AAC0E666DEF721E8B8D0FED8F95A879A14F2E76CE516C3D11C621E519"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/KSC-V.bcmap",
+      "sha256": "D7DA5AFD9F1FE74816D79C9325F0139A4EFB6438664EBFDF9A7AA92F3034360F"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/KSCms-UHC-H.bcmap",
+      "sha256": "5B70D8F6A4FA9E2283DC649F0FF95D906D56EFBEE50A20E8D2FAEC3A8FED078E"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/KSCms-UHC-HW-H.bcmap",
+      "sha256": "A5E6BA22ACEB02FDEDEE11BFB9ED138463D89E85B87810B9F075B469D936F8EC"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/KSCms-UHC-HW-V.bcmap",
+      "sha256": "890332A6A26880D463A12F2A6FF048BF9CF7E45077CFB1CA8815B89BAA7BF411"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/KSCms-UHC-V.bcmap",
+      "sha256": "1631B531C9A40C8CBE24C2317DBA107362E49FA6E18AF620414D627C111D570C"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/KSCpc-EUC-H.bcmap",
+      "sha256": "709480682C55CEDBB0124B9960D78E28FEBEEE0DF2E34607D61AAC6601647EC7"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/KSCpc-EUC-V.bcmap",
+      "sha256": "031707887D6FC2378A36CDB6775334FD7A236C3F95048D8436ABF43FE26FC49D"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/Katakana.bcmap",
+      "sha256": "3B6CA6642FBF8822DA00D5E58A8AA275216D5C32DBF2BD73E934197FC9FC5C53"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/LICENSE",
+      "sha256": "AA92AB5A472974865A96FD4A4E9C13BB41BF6FE1B309CB6B8DA48BC9E19839A2"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/NWP-H.bcmap",
+      "sha256": "286C6C9E335DA330928A01EDC3C97A3A623F1F7F3C42762B0A7DC2F651B1A78F"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/NWP-V.bcmap",
+      "sha256": "3A75FB7B59ADFB172710758C425D8AC6C93FD5360A64DD4AFD5DD04E60AB4B4D"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/RKSJ-H.bcmap",
+      "sha256": "A70DE61A22A898F693F02CC011C3E3CFF2E10AAA7CDDB4661E456A21AE859F78"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/RKSJ-V.bcmap",
+      "sha256": "68C1A64506471A524EA5CFC3B3A9F8F70031989A6BD95427B1351F33CCF50B06"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/Roman.bcmap",
+      "sha256": "1C6B3EF9D9E5CB1AA329142CE9414B90F9B6D7F9182A2A9E927378DAB8F0D43F"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniCNS-UCS2-H.bcmap",
+      "sha256": "779428116752F34E2490A1941D24E4634C71E3C22D053B811D2090AE2FB3C704"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniCNS-UCS2-V.bcmap",
+      "sha256": "1E5CC184B850EA44ABC2DF8AE5674279DF668E8EDF5E2A1A2EA2BD77ADBD280F"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniCNS-UTF16-H.bcmap",
+      "sha256": "32FF139B3C7B91D6AD25F994701F3CE7B242906022C418FD73E6493FC228BFE5"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniCNS-UTF16-V.bcmap",
+      "sha256": "278EB1E68D1A236C60EF59472CF0176EE0D45F364285E76CA12419A08D46FB9A"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniCNS-UTF32-H.bcmap",
+      "sha256": "BF26EB67FE19EE5BA915799E80CA72408400AA8342FDF6A244A4F44DE8F97336"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniCNS-UTF32-V.bcmap",
+      "sha256": "F7DA3CAF83CEB1CB37936FA10700D9BA6E9C3F72C5BC9724E3AC79BFF0C0179E"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniCNS-UTF8-H.bcmap",
+      "sha256": "2F2A742BCD1A84A148A4A518B9EED51A8F9C6CA5ED3BC5E2E41FFF97DE5DC2D8"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniCNS-UTF8-V.bcmap",
+      "sha256": "B7C3F10780A8C62DD1C8FF6C30DC1E4E23B6CDC87C3A96FCD514CC98FFD3AF9D"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniGB-UCS2-H.bcmap",
+      "sha256": "9201569B402E81AD8860650BD86350C4FA28E5DD5971F05FCACAF40F51DE18ED"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniGB-UCS2-V.bcmap",
+      "sha256": "F10282335E4D64203BC2A653A3A47D745EC76C8AE04549F4D50180C1899BE216"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniGB-UTF16-H.bcmap",
+      "sha256": "386FD39581245C034DA016A92D23F3DF1117D169F996100050B264FC09A84E35"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniGB-UTF16-V.bcmap",
+      "sha256": "0473CFBBA612B92DD9918F0FF8AEE9112897C48E0FFDC0EB82DA3144ED8EA84A"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniGB-UTF32-H.bcmap",
+      "sha256": "F48A145DC4E3ED1DCA1DDE7111716A72306A2A4191AB05C6BAE3A5C3A961CD2F"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniGB-UTF32-V.bcmap",
+      "sha256": "106ACC49B7118BDEF944E32107B4F348238F3929A0A15D3B7AAB7B9101535993"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniGB-UTF8-H.bcmap",
+      "sha256": "F217B439C80EE5FA1BC2CF6D1DEFCC319F8D84483D166A00EE199E05A68588DF"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniGB-UTF8-V.bcmap",
+      "sha256": "A64DF947632878EACC532FA193C735C92A383B7D66E6F8374AC193AF7C64FC63"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniJIS-UCS2-H.bcmap",
+      "sha256": "AD2352F40870880FBF7F8EE5ABADFF743FBD025FBF9830B8ADA472D1C5E4DA0B"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniJIS-UCS2-HW-H.bcmap",
+      "sha256": "16E87EDCA954177C0881C874859D6783220925D821B5CDFB8755B61EBD93F9CE"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniJIS-UCS2-HW-V.bcmap",
+      "sha256": "1973457E2C0192819947E56068625B34FB9A72ECC8A476CE6D7EAAE5F73E2E5C"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniJIS-UCS2-V.bcmap",
+      "sha256": "42A133D8E2CE9DD6D2288018E01592D2BF2435B326D39B94EA0B6E6A44AC33D3"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniJIS-UTF16-H.bcmap",
+      "sha256": "F6A89C5688978548C83FCEE990E205BC63C74274D5C69B49032A3BD4C49A05EE"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniJIS-UTF16-V.bcmap",
+      "sha256": "C67126FC7C73850855186BB0D6482AC0A365057E0B58778C4AB9F234683FEF53"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniJIS-UTF32-H.bcmap",
+      "sha256": "96195950CE0FE24443D8EB426FA6B88534EC421D7BEF9046F0B2362809CFBA73"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniJIS-UTF32-V.bcmap",
+      "sha256": "ED4DAFDA402BDD19C4D5D8BF2AB41473C0F86F384552B4C7B963D6627DAEDEB1"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniJIS-UTF8-H.bcmap",
+      "sha256": "798FB0BF06AB0788D1F6A91C2DB7DE581612EEF03C628F10E8F7ECD8F70AB448"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniJIS-UTF8-V.bcmap",
+      "sha256": "1021611424F913B2DF0BFDBE94BD327C04E224EC89D8E821C6501EA3D21F4265"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniJIS2004-UTF16-H.bcmap",
+      "sha256": "710A32D7CB43FD6BD9DBF30DA5971F8C941590F74441E208D852C2BE0E74CC97"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniJIS2004-UTF16-V.bcmap",
+      "sha256": "3B149AFF5C5707B57FB3215D1775852C8B1F413EC0F679EA628F25CF87FE098D"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniJIS2004-UTF32-H.bcmap",
+      "sha256": "8D2658E18741AF7937D586A57C89729A6FEC0D86121197C1F8518AA58B29CDFB"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniJIS2004-UTF32-V.bcmap",
+      "sha256": "6DD475782F2897648A683C48B2FA015A15B8F06856760BDDC8A17A63F418BACB"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniJIS2004-UTF8-H.bcmap",
+      "sha256": "691C614CE432B3E62486EFB54E5C84C6DA5AFE9B51B21253BDE4758FEB484183"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniJIS2004-UTF8-V.bcmap",
+      "sha256": "40A8C7EA2D46711C5F78FC9A878A7DB68B1543BA5CD60ECF14F519A2DEB829B7"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniJISPro-UCS2-HW-V.bcmap",
+      "sha256": "6826F94D789D7BF1960668C1C5819C34C9585C1B23152FBC19EE81C7DF08524B"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniJISPro-UCS2-V.bcmap",
+      "sha256": "493DE9FD1A08F7946065D8AB58F0C3C9FE489F5A0F109F2D05A3169B4BD5789F"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniJISPro-UTF8-V.bcmap",
+      "sha256": "6181D382CF736C5E09492E8BE9F26F31FA25B7462253F23AB16646AF432CAD81"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniJISX0213-UTF32-H.bcmap",
+      "sha256": "692044E1FB33445668632BC9FE7386805C624864BE1DDEB29D65BB0C99FC630C"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniJISX0213-UTF32-V.bcmap",
+      "sha256": "DD54E16CA7BFFB3A886242549B2BF7D78A277087F7C60D2636F118C21A5B0646"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniJISX02132004-UTF32-H.bcmap",
+      "sha256": "F80EA5A989BE30CCDA5A8804BAEF6D3B4B044D2B339BF8B31C671B2466171CF6"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniJISX02132004-UTF32-V.bcmap",
+      "sha256": "94C22BD99E771C5FBE0DD8DC39850570D4DB0075074ACA13E272813EDD7CC57F"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniKS-UCS2-H.bcmap",
+      "sha256": "A1081396AB4ADB6F4A5B6C15F896963C244C1C9BCB65CE5616D06096A1B9811C"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniKS-UCS2-V.bcmap",
+      "sha256": "6CAB547431958FBDC1D401D06EBD4DD61A73F5509A10F974DF32BCBCA11A2E43"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniKS-UTF16-H.bcmap",
+      "sha256": "42D35B396286499DFAE1737A07ADB3A64500DF37B426580BFB1D3EA872938519"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniKS-UTF16-V.bcmap",
+      "sha256": "5BDB7390C80DCC136CB47D41DC7460082560969C17322EE739FE3020FB642410"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniKS-UTF32-H.bcmap",
+      "sha256": "3A01EC51ED1B828101351E337FFB8250ABE11880032E5210F881170FED2588DE"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniKS-UTF32-V.bcmap",
+      "sha256": "DFDA895ECEAED081AF030DBBB962B49629EEA817FC3C02BAE15DB93D0C68ACD7"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniKS-UTF8-H.bcmap",
+      "sha256": "3FAC9C65145F72D7D42157A3B9C5ED6904632184E6A0888F2B828699AFD2002F"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/UniKS-UTF8-V.bcmap",
+      "sha256": "9ECC6CF30DD354B9778DDBA163B6CC7302B087CE9F39D1BA73472D2B75ED13CA"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/V.bcmap",
+      "sha256": "B9AD1C0C09FF14BCA52F9A28A9767EB857AD0E8946E64BA14C7387A7EB69866A"
+    },
+    {
+      "path": "Forms/Web/pdfjs/cmaps/WP-Symbol.bcmap",
+      "sha256": "543923BEAD225732ABA30976690EE89095A19628277B5863EFECC2C728D5D7BF"
+    },
+    {
+      "path": "Forms/Web/pdfjs/iccs/CGATS001Compat-v2-micro.icc",
+      "sha256": "73E1BA37D2BAD5BAB2A964F40A9EED96209666EFC067C3322626214BBEF234A0"
+    },
+    {
+      "path": "Forms/Web/pdfjs/iccs/LICENSE",
+      "sha256": "286E4FD7B447330B2C88E23890E3CD0A9D38CB398D4A59CB247F578CCBDA3213"
+    },
+    {
+      "path": "Forms/Web/pdfjs/package.json",
+      "sha256": "3FCF6A22713E12B62AC8430E54BF00547D664B3248B618AA57915840C7F8B617"
+    },
+    {
+      "path": "Forms/Web/pdfjs/standard_fonts/FoxitDingbats.pfb",
+      "sha256": "845C752392B6C914FB989C75A08B7792B88F542D2499042EF2889F8C814A16ED"
+    },
+    {
+      "path": "Forms/Web/pdfjs/standard_fonts/FoxitFixed.pfb",
+      "sha256": "B6C8FE53F134B8B6D4578CD2D544DF4CEE9624C4EFA8D51A560FB40EA296101B"
+    },
+    {
+      "path": "Forms/Web/pdfjs/standard_fonts/FoxitFixedBold.pfb",
+      "sha256": "F1B7159702973F54FC86254EA38BCF3712B2A736EB3A0995751E9F4BB45AD603"
+    },
+    {
+      "path": "Forms/Web/pdfjs/standard_fonts/FoxitFixedBoldItalic.pfb",
+      "sha256": "8A000945843BD31ADD06AEE63BF9FD41B7578B4F3242A4B7CD46349AD9D24D4D"
+    },
+    {
+      "path": "Forms/Web/pdfjs/standard_fonts/FoxitFixedItalic.pfb",
+      "sha256": "5007FAF8320FA1FCC08B8894B356AD976F60B992BA29EE5272578BBDEBAF3876"
+    },
+    {
+      "path": "Forms/Web/pdfjs/standard_fonts/FoxitSerif.pfb",
+      "sha256": "4F57D2B9D884AF8F907BF22DF6019B52D86CBF6214FDBD02B1AE05472A543F35"
+    },
+    {
+      "path": "Forms/Web/pdfjs/standard_fonts/FoxitSerifBold.pfb",
+      "sha256": "0BDF4B04E964139818D51EDA03D566BA999FC3BA2421B1C6C51F9DC969022E80"
+    },
+    {
+      "path": "Forms/Web/pdfjs/standard_fonts/FoxitSerifBoldItalic.pfb",
+      "sha256": "A406CAC82583BF98175CB62C87ED5E95C45FBB34EECE63A10B0A13E793CB2E10"
+    },
+    {
+      "path": "Forms/Web/pdfjs/standard_fonts/FoxitSerifItalic.pfb",
+      "sha256": "610AE0687198045C4DB5D1A6650FD5E92536631706382EB8B72E38DF578D0AE9"
+    },
+    {
+      "path": "Forms/Web/pdfjs/standard_fonts/FoxitSymbol.pfb",
+      "sha256": "47967D055530E7357088A08403115425643EC2CDFD6201BA8AF0FBD7116C1539"
+    },
+    {
+      "path": "Forms/Web/pdfjs/standard_fonts/LICENSE_FOXIT",
+      "sha256": "B578CDD2345840ADA550BD12519533812320D5F1D21CF4C1C7E1B1B0A31C98B7"
+    },
+    {
+      "path": "Forms/Web/pdfjs/standard_fonts/LICENSE_LIBERATION",
+      "sha256": "D2C4D5B3E115A519CB58EB691AA64538397E2611F9EBE801392CF9667997E7DC"
+    },
+    {
+      "path": "Forms/Web/pdfjs/standard_fonts/LiberationSans-Bold.ttf",
+      "sha256": "361C61B82D575C5C35FD9157FDA8B0194BCFCD0D88EA8521A4FB5DD53D33DDDC"
+    },
+    {
+      "path": "Forms/Web/pdfjs/standard_fonts/LiberationSans-BoldItalic.ttf",
+      "sha256": "A224075AC17495AD0A3AF3BC0A419AC0704A8B3FD1095456201FB9B095FC281D"
+    },
+    {
+      "path": "Forms/Web/pdfjs/standard_fonts/LiberationSans-Italic.ttf",
+      "sha256": "832B4406DBEF23628800D3AAAD21048534AC84D7E3AD955BE83B8172ED8EF512"
+    },
+    {
+      "path": "Forms/Web/pdfjs/standard_fonts/LiberationSans-Regular.ttf",
+      "sha256": "F8ACE1F892B2BD9DC1792BA7F097FA7588F84FED48321480E04DE5390828221F"
+    },
+    {
+      "path": "Forms/Web/pdfjs/wasm/LICENSE_JBIG2",
+      "sha256": "9E66B7F1B934A28B37F3BC4DAC97915DE1674271E79A0A88182A18ED9731B4D1"
+    },
+    {
+      "path": "Forms/Web/pdfjs/wasm/LICENSE_OPENJPEG",
+      "sha256": "A6AF136F3E15038A666B61F376612A07D9A4E48CB7C01ADBF3E33B3F14AB49B6"
+    },
+    {
+      "path": "Forms/Web/pdfjs/wasm/LICENSE_PDFJS_JBIG2",
+      "sha256": "AAD3CCE09842E00E9E11AD5E8FEF8CC02FBC3A3768FE2F007443B9CEE37AAEE5"
+    },
+    {
+      "path": "Forms/Web/pdfjs/wasm/LICENSE_PDFJS_OPENJPEG",
+      "sha256": "717FC62DA03292DBB4DD0C8280BD4CE7BB8550DCF31D772BC93455FB50313425"
+    },
+    {
+      "path": "Forms/Web/pdfjs/wasm/LICENSE_PDFJS_QCMS",
+      "sha256": "508A77D2E7B51D98ADEED32648AD124B7B30241A8E70B2E72C99F92D8E5874D1"
+    },
+    {
+      "path": "Forms/Web/pdfjs/wasm/LICENSE_QCMS",
+      "sha256": "36D847AE882F6574EBC72F56A4F354E4F104FDE4A584373496482E97D52D31BC"
+    },
+    {
+      "path": "Forms/Web/pdfjs/wasm/jbig2.wasm",
+      "sha256": "E6BEE67724A7B5436FE8162638E3708CFC8D52B6342DB69A49715E30FF27CFDC"
+    },
+    {
+      "path": "Forms/Web/pdfjs/wasm/jbig2_nowasm_fallback.js",
+      "sha256": "04C795A6657A4553A64B781EA3E85256203D913C3B71B72B85FA3CE00622F458"
+    },
+    {
+      "path": "Forms/Web/pdfjs/wasm/openjpeg.wasm",
+      "sha256": "004A0E62DB930BA9FF2A22212F4554D0BB57A0635A8287CAF70F98117CEE14BA"
+    },
+    {
+      "path": "Forms/Web/pdfjs/wasm/openjpeg_nowasm_fallback.js",
+      "sha256": "0F998419819DA4491D8302222AA9E2FF2494685641AA2A6C21C3760C29F3E319"
+    },
+    {
+      "path": "Forms/Web/pdfjs/wasm/qcms_bg.wasm",
+      "sha256": "663D86126D5F5FCB1C61490F94353E2A8375660B8C5498AB3EBAB5A34B08800E"
+    },
+    {
+      "path": "Forms/Web/pdfjs/wasm/quickjs-eval.js",
+      "sha256": "FE7930418E869791CE892567DBD0BC4698152B7E550B5CEFA553992C56DDC325"
+    },
+    {
+      "path": "Forms/Web/pdfjs/wasm/quickjs-eval.wasm",
+      "sha256": "7BCACC9F22CACF7E9B23866D2A6D1639693D40C7F144E41B7C69ED37BA9CBE8F"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/altText_add.svg",
+      "sha256": "1A9591A23999E1924438B948A9F9671147F04E01E5BE724391A3A8A2B58289D9"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/altText_disclaimer.svg",
+      "sha256": "5D19067A6B51E5BCC2D61325033A8450D301535505A97C50F4141F4CD9E2CF05"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/altText_done.svg",
+      "sha256": "5B40360D098D1A93227A0A5CDB110F6E5FF3A3EB4AF97B61E856C49E17141621"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/altText_spinner.svg",
+      "sha256": "4089182E21627182ED1D4020978B597D984FB8DE4CF547E9F4AC2AEC9AF13179"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/altText_warning.svg",
+      "sha256": "07264F4DE78A45A4177DDEFB48837217AA69B51462EF5B35D3FB9F90000C9EAD"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/annotation-check.svg",
+      "sha256": "9A680F1212888EDE7DCAE6BFC8CAFC447BABF4CE531271C8D07277B0AEDADE96"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/annotation-comment.svg",
+      "sha256": "C58B385B4A0BE6DE822A3262B8191073D1730F6420368BD9C6D80DB7312327FF"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/annotation-help.svg",
+      "sha256": "74D9BBA0814D12F5AE2715189E1747B7EDF5FF6D82C4CA75BAE86D717319B6EB"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/annotation-insert.svg",
+      "sha256": "B2153E2C88C62179029EA9876D463216529ECF581B77D52C971A2CDF3D3166C6"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/annotation-key.svg",
+      "sha256": "5772B8DD158B0F02BB2BE689BB680F4903D84E202CB29A3DC0560AF53134C6BA"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/annotation-newparagraph.svg",
+      "sha256": "A583CCA122263D94C3EEBFEFE83C965A1B305B9C84E5AA3C5BA10527941DB7DB"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/annotation-noicon.svg",
+      "sha256": "76399E70D311834D11AB2D6239118B36847D79A78D7655B1F839D51C811304CF"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/annotation-note.svg",
+      "sha256": "11A75C9F233DD3E5E3500EDCDD733358394F28395337616E8B0430694BF0DBA1"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/annotation-paperclip.svg",
+      "sha256": "0213C8BAED4F8C497881FFED0E49ABB309291D51725AAF1A0A757174B4999368"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/annotation-paragraph.svg",
+      "sha256": "EFBCD2A6CFB4581DAD74A1C09AD43CF2B8245611E5B19C966317DA948F2BCB7C"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/annotation-pushpin.svg",
+      "sha256": "22197186D18445959E5FE5577D8E34440B31D87C811DAF47318078310C0C5530"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/checkmark.svg",
+      "sha256": "424DF6B8515DF22424C9505A9E87D35D87D3FD59962D56692FCC4D17613F2165"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/comment-actionsButton.svg",
+      "sha256": "281B2348ED747EA3EE74763A01D56441D8C570B3E68F11556DC4084A14484D1F"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/comment-closeButton.svg",
+      "sha256": "FDB819984E10758952BC35B5BE3220538B21A787656794B1071FECD3D2648930"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/comment-editButton.svg",
+      "sha256": "E79C41BF53A89CED9A3AD364A49943813189D06FD96174952E5FB2636938B70F"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/comment-popup-editButton.svg",
+      "sha256": "857C0198BC536885F2B486353D5719D0C1BB91D69325474F7D787CE5B43CFE1E"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/cursor-editorFreeHighlight.svg",
+      "sha256": "90B04428328A67E184FE1B1A1F28CB0D62BF6E298614CA241B6564FB24CB9E7E"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/cursor-editorFreeText.svg",
+      "sha256": "FEDB05EE0DD510514ED9EDB24B3B4DA2707931279A0BF48E2A1DEB3A1F4CF581"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/cursor-editorInk.svg",
+      "sha256": "0AE889DEBE01269B49B89D8845995281223B8AE289405758631076B763DA3EFE"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/cursor-editorTextHighlight.svg",
+      "sha256": "C6252B0EDCB68DAC87557A027180FCBDBD93466841AA34792530F7CCE54CEC5D"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/editor-toolbar-delete.svg",
+      "sha256": "F1F47A2CB479A87807F9BD61BD5813C1FE857DBBCB4FB35AE7A77CA39114F920"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/editor-toolbar-edit.svg",
+      "sha256": "C6EACC709E4DD30A57120B6531856C003A4C931C46656C3625E2FD5886CF4CE6"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/findbarButton-next.svg",
+      "sha256": "3029879B7E1060D54C4EDCFE0C93C8C3B8C1756FB794E5D4ADD64028B5F99FAB"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/findbarButton-previous.svg",
+      "sha256": "766D12BB08B9F13C753D289F3C029F5CA202EDA3A8BE52AFC9E31697335F4A80"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/gv-toolbarButton-download.svg",
+      "sha256": "010D9D77A425E80EB666A196F500CDD8B15758AF69A19AD7F11279B78C29E3F5"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/loading-icon.gif",
+      "sha256": "483C4A0396691993A641EC409C44B8B7E1DAAB0AE7E2B2944C4BC59520BB7655"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/loading.svg",
+      "sha256": "7D6E14CF6226C74C26E2141180EADC944EF4CE8565E9B6DD2670EC202417A764"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/messageBar_closingButton.svg",
+      "sha256": "7393C7791916243ECA6BBDDA8BF137D36600FFFC76D7A55D33A77BD4E7778193"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/messageBar_info.svg",
+      "sha256": "050E838B982B1B3E993E06BD666F8693EA98E89FB568C39C4AF32E128477AEEF"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/messageBar_warning.svg",
+      "sha256": "888A4BF2AD5150028663DDE01FE71599336C87CA12697180E51BD8A13B88084F"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/pages_closeButton.svg",
+      "sha256": "03577A1FC1FC16BE0331C65D45ACCC4D57C269381999E00B2BEC9005225A7643"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/pages_selected.svg",
+      "sha256": "A66AE84122FC40CC1282C68205909387E05A80061B9A7268A54B4BD0C9E7E2FC"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/pages_viewArrow.svg",
+      "sha256": "409D9A306DF6E86BC433365F961BE50C9B4256B7A89B741F2F858AF5B456B2CE"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/pages_viewButton.svg",
+      "sha256": "F49C2DDD994C602DCACEB3C6B1445EF37BFD6CA8E2CB468D894741368C3344AF"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/secondaryToolbarButton-documentProperties.svg",
+      "sha256": "735A4BC556610BC6DEDAA40A36CCF444C31032BE02AD20DF5AC4C66EBAA5BBC3"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/secondaryToolbarButton-firstPage.svg",
+      "sha256": "D46A7B0760FBC043A98F9B328F6B4EE56DF8DE140A2A290F0E2A915FF772E287"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/secondaryToolbarButton-handTool.svg",
+      "sha256": "E968339BA921E68D4D83E6EC7A4321F1791C86F4EFF552F28CF4C81C6F88155B"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/secondaryToolbarButton-lastPage.svg",
+      "sha256": "4CC4B92888B776EA3A09D5E86B17D7BB50A8F3E6D09854D4C2E3F050C34DC9F8"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/secondaryToolbarButton-rotateCcw.svg",
+      "sha256": "7EB24492DF9F42C8AB053CBEAD5D985B0DAACCCED649392D1FBFDE4931459451"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/secondaryToolbarButton-rotateCw.svg",
+      "sha256": "03D2E7BAD2FC95895334E43EDF34309A64223F32504304034EB1F6B163954898"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/secondaryToolbarButton-scrollHorizontal.svg",
+      "sha256": "C61FB184D5311255B627A9943C156BB1F00F835282D832241E01A7D82A22B678"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/secondaryToolbarButton-scrollPage.svg",
+      "sha256": "E60AE21987A2E6E5352AC3171363352CAC9D2CAE36BF828D1729CBFA286E085D"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/secondaryToolbarButton-scrollVertical.svg",
+      "sha256": "79871E2329CBB4DC2B6DF94AAE5F3074B3FDEBFFBA46FE7D3ADE9AFF5726BFB0"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/secondaryToolbarButton-scrollWrapped.svg",
+      "sha256": "8734AA2747F6FFF9E8FD09F6E9509DB43EC1B63935C8F6B8291E9347BC7E2706"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/secondaryToolbarButton-selectTool.svg",
+      "sha256": "332E08979379FF2F8A7BFD336E8CA6348546C78CE2A6BF464CD31DC2C64004AC"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/secondaryToolbarButton-spreadEven.svg",
+      "sha256": "AC385199D448C0D5AE5D4C06D2C76DB0A31BB5DB54D0FBD727F3DC889E73271B"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/secondaryToolbarButton-spreadNone.svg",
+      "sha256": "649934C2F447D7A239D6FFCE8F8E0804B50DFE1D9421A1D16E9543C0AEE9B03E"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/secondaryToolbarButton-spreadOdd.svg",
+      "sha256": "43B6862D35F86DBE5FEC6B16E2CB59CA22C490BDF0787E4590C1CEB494D05244"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/signature-properties-row-check.svg",
+      "sha256": "3FE9E7E5869E80C04E560EC79E8960ED0F3E918195B6DE2B039BD33FB23ECF0F"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/toolbarButton-bookmark.svg",
+      "sha256": "F2A335BC963E95344D26D61157B1511F5F78D705B38579004971D51A3C62401C"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/toolbarButton-currentOutlineItem.svg",
+      "sha256": "5F6505F05DBC728301942B37DE22D490F09276E6C9A6561B1894AFA91F34439C"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/toolbarButton-download.svg",
+      "sha256": "AFA286C8EA1941EAEC589ED6A2103C5A845F3FF76A7423BA985F449465005163"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/toolbarButton-editorFreeText.svg",
+      "sha256": "9EC2202E18BA668EE1753179AFEAD4E1786EAC82DA2CC82AFC5A09584C242C43"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/toolbarButton-editorHighlight.svg",
+      "sha256": "DF0AAC50621777FB63DA60B38C71C5BBBDE746C4DD55C30DD141621CB30B7CC4"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/toolbarButton-editorInk.svg",
+      "sha256": "081BF99D3C2390036A2D9C7E9485316BCD049F90A74E982F1EEBCFD4D9B178E3"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/toolbarButton-editorSignature.svg",
+      "sha256": "32E07998FD55A7ED40EC2B542FE324EC097D9023FC4C59D6DEBE33BECDF215C2"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/toolbarButton-editorStamp.svg",
+      "sha256": "18294793F2399A8A44EE246D63B20CD46CB3CD38A1BB72F00B826E7F756C5F52"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/toolbarButton-menuArrow.svg",
+      "sha256": "2DB41F97615A8C912F676A62C88B12E2B8715F4ED188DF325737423501AA4A8A"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/toolbarButton-menuArrowNova.svg",
+      "sha256": "8677B09AF730BA49DDE7BE6F16D08A0B4EB594ED3402F9693E298223D3E9EFFF"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/toolbarButton-openFile.svg",
+      "sha256": "7ACB9E9964DD618BFCB657D8D18DB2C55EF8F168C37F3873C06D72C63E1B11EC"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/toolbarButton-pageDown.svg",
+      "sha256": "09A14CBD902AAD9FE40F2351DB2AC5593AD897AED8810B9C6AEB0E56389FF100"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/toolbarButton-pageUp.svg",
+      "sha256": "BAC79138CB730C6BFA63BEF02D7E5906AEE727BB54DF15878823426822BADAAA"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/toolbarButton-presentationMode.svg",
+      "sha256": "2A08E4277E39A9FAEF69520570744650BB017C2E90FE7C15224144D6B4ABFBE7"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/toolbarButton-print.svg",
+      "sha256": "267745D6C176AFE038630C3F7C0FCDA78141FC7634F73898FFC6CBB1262C77AB"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/toolbarButton-search.svg",
+      "sha256": "32889ACAFD84EDEEC513DB6131252FA97FFFF00FEE6272D05E35E2D95216E30F"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/toolbarButton-secondaryToolbarToggle.svg",
+      "sha256": "FF717321D89309F51BCCCC28F347E6A888E73570527845D6560A84F5D70CB3A0"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/toolbarButton-signaturePropertiesError.svg",
+      "sha256": "957D6CE5E6C4A62F88AD0E79C50B6CCD94358524A7450D3B04EB318146A46351"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/toolbarButton-signaturePropertiesVerified.svg",
+      "sha256": "AE9F3A3E7E8E16900E6B2DBAA7ACEA0111763B72125246E55B572F4E9E66BC16"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/toolbarButton-viewAttachments.svg",
+      "sha256": "E07FBF17B3C7CA2CDA9C4E54CDD66CB0AA63D368232CBB2C9AED5559720BF96C"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/toolbarButton-viewLayers.svg",
+      "sha256": "E0B8A59C272DC9A1D9A07D461363F96C3B3BD3DF2DB778F8F99743DFFFD51D78"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/toolbarButton-viewOutline.svg",
+      "sha256": "EEB6CD0CE94DCFEA6BD2ACA222DA7B1583D74800EA9C94640FF8FA06C13FB044"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/toolbarButton-viewThumbnail.svg",
+      "sha256": "5FA35769DB66B33D6408F378E8AA68FA060331F0CC9DD6AD41FB7366082AAD34"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/toolbarButton-viewsManagerToggle.svg",
+      "sha256": "88098D3E47FD921122C5263DCE50EE67C662C9CB65908BE0481891DFE521A6C5"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/toolbarButton-zoomIn.svg",
+      "sha256": "722DFE315686A5841D0A0D00F34DF8F706D2C6E24551D46A5EBE971FE4AF62D2"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/toolbarButton-zoomOut.svg",
+      "sha256": "366A40C3627E67F97164976D5FF38B5484716E834D08FEFE252A6EA37FEDA895"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/treeitem-collapsed.svg",
+      "sha256": "37C96D0DC2F626C541303A76067184AC09614F2390A8430E973A84E5184E2646"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/images/treeitem-expanded.svg",
+      "sha256": "DF4A149C4EAED4573620621087F7BAB816F049E3E341574654FAB598435DB086"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/pdf_viewer.css",
+      "sha256": "D26AEE4B5A7EAB8F1A9AD16F271C674474D69D9A1E99AE8923776252052E0F98"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/pdf_viewer.d.mts",
+      "sha256": "85AD88B315EF15EFF4FA2311C4A1D29AA77E1DB0355DE822A14CB007C2B713B4"
+    },
+    {
+      "path": "Forms/Web/pdfjs/web/pdf_viewer.mjs",
+      "sha256": "44BB8CE82F624D546FF35EB679A8D5234C795D8A63954D678CDB3FECC5DADA48"
+    },
+    {
+      "path": "GITHUB_RELEASES_AR.md",
+      "sha256": "03A140425FD570E897D6930C174C981EE4F0894CC2AF396530A79243DF98EB46"
+    },
+    {
+      "path": "GitHubTools.ps1",
+      "sha256": "80904074F4286287AAB537266C688B18CD9CD98602F77BA2BE7ECB0903927119"
+    },
+    {
+      "path": "HamiPdf.csproj",
+      "sha256": "FF72CA359126E1313401AF45F13CD6BC1FF1532E466EB7B93055E98BCE30AEB0"
+    },
+    {
+      "path": "HamiPdf.sln",
+      "sha256": "7E6B49A05D1D5EC1E6BA475F03A3A9CCA34AF66097E13319181229B661391C91"
+    },
+    {
+      "path": "HamiPdf_3nxmmuae_wpftmp.csproj",
+      "sha256": "EDC0361DF799A7C9162821A7FA8061A833CA3527AF967DEFDF29DF13CE37B5D5"
+    },
+    {
+      "path": "HamiPdf_clt1rnt5_wpftmp.csproj",
+      "sha256": "B68F9EEC6D9546931B40EDB69745720C8372B44D26F81DD637BD2527BC88B09C"
+    },
+    {
+      "path": "HamiPdf_heldk31p_wpftmp.csproj",
+      "sha256": "7E84111AFB4C4BD7F4FEE98C8D607A2EBC96D1AA3318702791266CE5E77F3051"
+    },
+    {
+      "path": "HamiPdf_qedhd3xl_wpftmp.csproj",
+      "sha256": "1819A90E83CB6B4F4A6E827EA78ECA6C20D4E42E2C7A9839739D2645AE611EC3"
+    },
+    {
+      "path": "HamiPdf_si1xcsl4_wpftmp.csproj",
+      "sha256": "9932879D7408372FAC10EE08E3791F506B2C0673819369B59190FB8DC6F5223C"
+    },
+    {
+      "path": "Licenses/NAPS2-SDK-LICENSE.txt",
+      "sha256": "0FDB34D641381C6156A91F1D1B5F210D209FD842F42A5CD2FAA39FA96AAC22B8"
+    },
+    {
+      "path": "Licenses/SCANNER-SOURCES.txt",
+      "sha256": "F4703A838B7E65D16749A9DC66870814480935E0EFAC4DE7AB54CF1F6C2BF216"
+    },
+    {
+      "path": "Licenses/TWAIN-DSM-LGPL.txt",
+      "sha256": "4217DACFF34398AA395188964934E2882626D7F17E8393E2198E9E4C676632CC"
+    },
+    {
+      "path": "MainWindow.xaml",
+      "sha256": "F7941FC404905C14A13271D7AA1BB12E299605C45062B9BE69CF3E4FBAE0B02E"
+    },
+    {
+      "path": "MainWindow.xaml.cs",
+      "sha256": "21418D5A30D4E535A1F7EC2AF1C41E0807828373AB39A4DE7EDB1D67CD45348F"
+    },
+    {
+      "path": "PHASE08_README_AR.md",
+      "sha256": "F801B79B61BC77292A3833BD3329BC416D525FA8D92483738CA49BBDE7217F0E"
+    },
+    {
+      "path": "PROGRAM_FILES_AR.md",
+      "sha256": "300415D7D89CC6FE83726CD034C3992160712ED072CDC421F44B8A19263C2C15"
+    },
+    {
+      "path": "Packaging/HamiPdf.iss",
+      "sha256": "07F2C08626ED3520CA855F48304A0D0E03C6D60E0E0569D9A667DD36FAB66461"
+    },
+    {
+      "path": "Pages/FormPageComposer.cs",
+      "sha256": "0540A0F909897CDFA5E996FD4881B13060290E7502CC7AC83E80A438774B8AF2"
+    },
+    {
+      "path": "Pages/FormPageExport.cs",
+      "sha256": "31F9EB36AADA6CC37755038C1FDC87146EB66FA5F5AB20405142EC802866F03E"
+    },
+    {
+      "path": "Pages/PageExport.cs",
+      "sha256": "201CC8784D916EF0D065E0B095CDFAAC3B5DC0CB9EADD86840A73CE878F1868A"
+    },
+    {
+      "path": "Pages/PageManagerWindow.xaml",
+      "sha256": "8A17DC912258DFBB0DC97D9DE513ACFCF6EDBE23A99E4D5D9D1D2D97F88CD373"
+    },
+    {
+      "path": "Pages/PageManagerWindow.xaml.cs",
+      "sha256": "AA63EC5C09DCCB869749FE2F745900990304DE750045B9FC8E8BBB03C1F5A6FB"
+    },
+    {
+      "path": "Pages/PagePlan.cs",
+      "sha256": "942525C7E4DBD869147ADFEEB620A4A1F31F5251F3336793940ED4C95B59ACEE"
+    },
+    {
+      "path": "README_AR.md",
+      "sha256": "E41053A3A521A6BA69F2343DF14BA45A3CED86CF7F6F6357698A14C1994F307C"
+    },
+    {
+      "path": "RELEASE_NOTES_AR.md",
+      "sha256": "65F0D0CE01866B4953BF8CBA4B21121D2F38BF8128A973719DA7E6565A48B884"
+    },
+    {
+      "path": "SCANNER_README_AR.md",
+      "sha256": "D999F79E40B99BB90A5F521C4AF962C8973C28B9F1E8C973F1E507C5E0C8D173"
+    },
+    {
+      "path": "Scanning/ScanPdfWriter.cs",
+      "sha256": "A85A2896EC56F203E8974D85DA13C34C2AD4FA2A9FDDE49BDBA6AC6963F49753"
+    },
+    {
+      "path": "Scanning/ScanPreferences.cs",
+      "sha256": "2E7C71A83DA4A723E54916BCD45A1A314BA8AA3BCA3003082568E9A13F04CF37"
+    },
+    {
+      "path": "Scanning/ScanWindow.xaml",
+      "sha256": "8457AB8F4CA4CA43302859ED801AE71265598F54C3FAEDC15D158EA0BA8C19AE"
+    },
+    {
+      "path": "Scanning/ScanWindow.xaml.cs",
+      "sha256": "E1160D3C58CFCF8004A5DEC1CC5B2A9F581315EAB90AC5A88AAE3EBA0B3E078A"
+    },
+    {
+      "path": "Services/BrowserRuntime.cs",
+      "sha256": "6DBFEBAE79BA0AB744722A3A7FD6637E5EFFC6813F50B9A95AFF1D1543042E91"
+    },
+    {
+      "path": "Services/LaunchProtocol.cs",
+      "sha256": "D5E12C655574A6857F8E55F07EACDEA8887DE9872306180FEA7BA484BB01A47E"
+    },
+    {
+      "path": "Services/PdfFile.cs",
+      "sha256": "4D0DFA00BCB4474C01C8C366B9C03FF2EC97A613CE80F7F34DB33399FBDB9F69"
+    },
+    {
+      "path": "Services/ShutdownTrace.cs",
+      "sha256": "BD5D01D38C12AB3956E45F2E7501467D377A28CA3B7FAB23B2393DCD1A9313C6"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "sha256": "1656811764F94458CD826B5F1B93C2F3CB64B3BD2485F409FCF29D089E6A6B36"
+    },
+    {
+      "path": "Tests/BrowserChecks/README.md",
+      "sha256": "AE4F361B8E23A6E3120B044F63D65559D3AFDA64C1FA09F5342974E04BACC8F1"
+    },
+    {
+      "path": "Tests/BrowserChecks/pages.cjs",
+      "sha256": "AE6BA60F40B3C945F8BA94F6282D0F45E4F52019D8CE5BFCB2AAF8D4670343E1"
+    },
+    {
+      "path": "Tests/BrowserChecks/refill-pages.cjs",
+      "sha256": "809A266A0B9025C4A15B1FD758728B10275CF53B20BC5B892B18AB4B9378CB4E"
+    },
+    {
+      "path": "Tests/BrowserChecks/run.cjs",
+      "sha256": "E5727DDBBFD953EED6A8C4C6AADE83C63A8C7706830E1EE29D24FC3B0408F85C"
+    },
+    {
+      "path": "Tests/FormChecks/FormChecks.csproj",
+      "sha256": "56104351C7636E06DB55439C4CD94BF151B26C307AEF342CF15AFF24C498772D"
+    },
+    {
+      "path": "Tests/FormChecks/Program.cs",
+      "sha256": "5501D99B60205F6950D1E500506773CC8681821FE736543DBA8AF33E2250475D"
+    },
+    {
+      "path": "Tests/FormPageChecks/Fixtures/extract.json",
+      "sha256": "747385F9E04925468AFFD18B96800DD1683385DACB619734FE2F58AA9906E2D5"
+    },
+    {
+      "path": "Tests/FormPageChecks/Fixtures/extract.pdf",
+      "sha256": "8C8E9CC1C685F3D31059BA81492CE6EF3D26F7B81485D1F30809EB32FD0379BE"
+    },
+    {
+      "path": "Tests/FormPageChecks/Fixtures/merge.json",
+      "sha256": "D72962D56FC84EC166D171ADDC3CE52F4B16FEF7725C4571C4A010C10FD3E576"
+    },
+    {
+      "path": "Tests/FormPageChecks/Fixtures/merge.pdf",
+      "sha256": "F72B4FD44100E8687414543BCEE1E85E4B3EE0F1489960AC449A163A77505074"
+    },
+    {
+      "path": "Tests/FormPageChecks/Fixtures/radio.json",
+      "sha256": "0BA746CEF78E5F56CFBB5A5225B2BF56744E38265D5575C20F413CD2238084E6"
+    },
+    {
+      "path": "Tests/FormPageChecks/Fixtures/radio.pdf",
+      "sha256": "A07260A6C55BC943A3E43D687E71B21694EDEC7DA1843C373A52DD13FEE2C77C"
+    },
+    {
+      "path": "Tests/FormPageChecks/Fixtures/shared.json",
+      "sha256": "E444EDCA034EFE19E70E250909DD337568866EB2E594DA9ECDAD781B2CB60992"
+    },
+    {
+      "path": "Tests/FormPageChecks/Fixtures/shared.pdf",
+      "sha256": "2B16C45E6A1FD520DF4882F5171C03372ED9C99A5550A4DE2C73E432C303871B"
+    },
+    {
+      "path": "Tests/FormPageChecks/FormPageChecks.csproj",
+      "sha256": "0A9C2D8605A68714B9F38EC7AECB54A45CA0E984A3B9F45736491F1156A42524"
+    },
+    {
+      "path": "Tests/FormPageChecks/Program.cs",
+      "sha256": "7A07AD5EDD1BB8A6CACF5C94C6FDCD86C30B74429C3570919562FF158248C071"
+    },
+    {
+      "path": "Tests/GeometryChecks/GeometryChecks.csproj",
+      "sha256": "C6A72008A81DA699E29349B7B9B9B539DA322A01E5EE9B71C89B7F85CAF02794"
+    },
+    {
+      "path": "Tests/GeometryChecks/Program.cs",
+      "sha256": "1381E00D58B1B47812B3A1AFC9D99EF125B26F93EEBFD6761372C1EF1CE43D49"
+    },
+    {
+      "path": "Tests/LaunchChecks/LaunchChecks.csproj",
+      "sha256": "F46A90411D895B4BB573C749BDB8EE5FB9CED5117903C4B2A9C3091177361D8C"
+    },
+    {
+      "path": "Tests/LaunchChecks/Program.cs",
+      "sha256": "A8743D9AB23A9ED9BB5AD27251300610FDE5AD8D0837D617EEDC0C515A383A3A"
+    },
+    {
+      "path": "Tests/OverlayChecks/OverlayChecks.csproj",
+      "sha256": "5C93F797FCD98DC8AEEBF35B7127514E01F5AC21C418C4C3CCB9E9E1B4B3D981"
+    },
+    {
+      "path": "Tests/OverlayChecks/Program.cs",
+      "sha256": "F23E83E90C73D87682AA3A9772A6E591BFBF51D40E96AE9BAA584D2B03DD47AC"
+    },
+    {
+      "path": "Tests/PageChecks/PageChecks.csproj",
+      "sha256": "0993C639A9AC6B72C6B81F920EF9EB47205F414F1DBF78B32AA94BEEC2581D58"
+    },
+    {
+      "path": "Tests/PageChecks/Program.cs",
+      "sha256": "61BF0564A1600A117995034A53ACD9EFD5C7B3CB9AA9C152F9747CDF76E19930"
+    },
+    {
+      "path": "Tests/ScanChecks/Fixtures/landscape.png",
+      "sha256": "789799FFC8096D3AA8F3D9DF757F985DC71B3512B8A0B916FC3F7DAEDA03F83F"
+    },
+    {
+      "path": "Tests/ScanChecks/Fixtures/portrait.png",
+      "sha256": "5211DC0E9AAD71CCEBDEED515A80466675911DB57233A3B91D9DC7E573976B35"
+    },
+    {
+      "path": "Tests/ScanChecks/Program.cs",
+      "sha256": "0D4194067B1631EBFAF31033EC023AC7B6D4F476F61FF82B4690D0260C28B126"
+    },
+    {
+      "path": "Tests/ScanChecks/ScanChecks.csproj",
+      "sha256": "DE24922EEF485C214B83A7B996A3F1FE61389CB3E2F74549C6EC6334B356240F"
+    },
+    {
+      "path": "Tests/UpdateChecks/Program.cs",
+      "sha256": "2C3CDF773066F999941CC88CA5606C32D3F54FC5DF8D03EA3E0521D8EC24CB96"
+    },
+    {
+      "path": "Tests/UpdateChecks/UpdateChecks.csproj",
+      "sha256": "BA04ED7A0DB2414C00D6935E15756EE7C2244087EC5FC3B74F042D81648F04FF"
+    },
+    {
+      "path": "Themes/Icons.xaml",
+      "sha256": "9ABB62FBFB18BC4092F261BEFBB59EEA122F37AE622F564A441F927ED669D778"
+    },
+    {
+      "path": "UPDATE_082_AR.md",
+      "sha256": "0B3B2A3FA712BC7B206B7C8FCBDFD1E32F48AB8DB620B0F420393CF3E61F2624"
+    },
+    {
+      "path": "UPDATE_083_AR.md",
+      "sha256": "556AAAA2F7F054DE0DAC50AE14B5D17FB28762A8B16874BED3BA13BF6B426DA2"
+    },
+    {
+      "path": "UiVerification.cs",
+      "sha256": "1F004DAC49D03FB42F990FD3C078DE4FBA623564D2BBAA6BC11660BC21BEA2F6"
+    },
+    {
+      "path": "Updates/ReleaseFeed.cs",
+      "sha256": "D7ECCAED2199BC21847E1A24BE2289726C2E5FF44A6FAC538F42C8398DEDB152"
+    },
+    {
+      "path": "Updates/UpdateSettings.cs",
+      "sha256": "8A61DEDDE8FD3008FC70E682A19C9CB458CC75F4B7FCC17A8F5562D302D126A3"
+    },
+    {
+      "path": "Updates/UpdateWindow.xaml",
+      "sha256": "6F083B937B7BEF9FA4C2EDFAA0154BABD5BB875613FEDE687D1AA4F5FA80D5D9"
+    },
+    {
+      "path": "Updates/UpdateWindow.xaml.cs",
+      "sha256": "4B64676C01B3E9F4DC5C0AA5344D54D7C1B5946C0D4406A9B8E227FC0B4D4065"
+    },
+    {
+      "path": "VALIDATION.md",
+      "sha256": "B0F2D45EA0090ED8BCF80BDAE8A5B9F34F0DB3CA1866373CC8968B0D3F342C29"
+    },
+    {
+      "path": "_win32/twaindsm.dll",
+      "sha256": "BA747E28769D85458A33A61A2A230435612E376F99B9A2DC104A817E2D451BFA"
+    },
+    {
+      "path": "_win64/twaindsm.dll",
+      "sha256": "96A87AABDF2AF814785965DE82F25D30F2CD1C1C6755835782AED8000D36E56E"
+    },
+    {
+      "path": "build-installer.ps1",
+      "sha256": "8F95F5D308CA5D457392E8787A8F8BF85F408AE38B3B8E7087FC2B6BC84C70CA"
+    },
+    {
+      "path": "build-run.ps1",
+      "sha256": "260C1A0154CDCE0AD23C2281CD4B0FE113D5B1AF876B485A35776EBDE75D4222"
+    },
+    {
+      "path": "install-machine.ps1",
+      "sha256": "C5770EFC59F68E06565A617AF90D4AC9A21267F43B31D3FF5013E1D920099A31"
+    },
+    {
+      "path": "publish-release.ps1",
+      "sha256": "6962EE11A1E35BFAE686792BC1EC3FF90626FADF7FAE69C9033419C9CF153482"
+    },
+    {
+      "path": "upload-github.ps1",
+      "sha256": "C0A24DABE3C45967676216EA6065A46E7D9089435B0E907097A661BE1D90DCCB"
+    }
+  ]
+}

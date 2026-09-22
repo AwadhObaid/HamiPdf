@@ -8,14 +8,14 @@ if ($principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator))
 if (Get-Process HamiPdf -ErrorAction SilentlyContinue) { throw 'Close HamiPdf before changing the installation.' }
 if (!$SetupPath) {
     $artifactRoot = Join-Path $PSScriptRoot 'artifacts'
-    $candidate = Get-ChildItem -LiteralPath $artifactRoot -Filter 'HamiPdf-Setup-0.9.2-win-x64.exe' -File -Recurse |
+    $candidate = Get-ChildItem -LiteralPath $artifactRoot -Filter 'HamiPdf-Setup-0.11.0-win-x64.exe' -File -Recurse |
         Where-Object { Test-Path -LiteralPath ($_.FullName + '.sha256.txt') } |
         Sort-Object LastWriteTimeUtc -Descending | Select-Object -First 1
-    if (!$candidate) { throw 'Build the 0.9.2 installer first with build-installer.ps1.' }
+    if (!$candidate) { throw 'Build the 0.11.0 installer first with build-installer.ps1.' }
     $SetupPath = $candidate.FullName
 }
 $setup = (Resolve-Path -LiteralPath $SetupPath).ProviderPath
-if ([IO.Path]::GetFileName($setup) -ne 'HamiPdf-Setup-0.9.2-win-x64.exe') { throw 'Select HamiPdf-Setup-0.9.2-win-x64.exe.' }
+if ([IO.Path]::GetFileName($setup) -ne 'HamiPdf-Setup-0.11.0-win-x64.exe') { throw 'Select HamiPdf-Setup-0.11.0-win-x64.exe.' }
 if (!(Test-Path -LiteralPath "$setup.sha256.txt")) { throw 'The successful-build SHA256 file is missing. Rebuild Setup before removing the old installation.' }
 if (Test-Path -LiteralPath "$setup.sha256.txt") {
     $expected = ((Get-Content -LiteralPath "$setup.sha256.txt" -Raw).Trim() -split '\s+')[0]
@@ -66,8 +66,8 @@ $uiReportPath = Join-Path $installedDir 'ui-verification.json'
 if (!(Test-Path -LiteralPath $uiReportPath)) { throw 'Installed UI verification report is missing. Do not use an older installer.' }
 $verified = Get-Content -LiteralPath $uiReportPath -Raw | ConvertFrom-Json
 $actualHash = (Get-FileHash -LiteralPath (Join-Path $installedDir 'HamiPdf.dll') -Algorithm SHA256).Hash
-if (!$verified.ok -or $verified.version -ne '0.9.2' -or $actualHash -ne $verified.assemblySha256) {
-    throw 'The installed application does not match the verified 0.9.2 build. Send this error for diagnosis.'
+if (!$verified.ok -or $verified.version -ne '0.11.0' -or $actualHash -ne $verified.assemblySha256) {
+    throw 'The installed application does not match the verified 0.11.0 build. Send this error for diagnosis.'
 }
 Write-Host '[OK] Installed DLL matches the build with the verified About window and PNG logo.'
 # A manually chosen default PDF app can have an HKCU Applications entry pointing to the old EXE.

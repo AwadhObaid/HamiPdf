@@ -5,7 +5,7 @@
   #error OutputDir is required
 #endif
 #ifndef AppVersion
-  #define AppVersion "0.9.2"
+  #define AppVersion "0.11.0"
 #endif
 [Setup]
 AppId={{8B43D632-67AA-45C5-BE93-F759615B6C19}

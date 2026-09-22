@@ -40,7 +40,7 @@ try {
     }
     dotnet publish .\HamiPdf.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=false -p:PublishTrimmed=false -p:DebugType=None -p:DebugSymbols=false -o $publish
     if ($LASTEXITCODE -ne 0) { throw 'Publish failed.' }
-    foreach ($required in @('HamiPdf.exe','HamiPdf.dll','HamiPdf.runtimeconfig.json','coreclr.dll','Microsoft.Web.WebView2.Wpf.dll','Forms\Web\index.html','Forms\Web\forms.mjs','Forms\Web\pages.html','Forms\Web\pages.mjs','Forms\Web\pdfjs\build\pdf.worker.mjs','Forms\Web\pdfjs\web\pdf_viewer.mjs')) {
+    foreach ($required in @('_win32\twaindsm.dll','_win64\twaindsm.dll','NAPS2.Worker.exe','NAPS2.Sdk.dll','NAPS2.Images.Wpf.dll','NAPS2.Sdk.Worker.Win32.dll','Licenses\NAPS2-SDK-LICENSE.txt','HamiPdf.exe','HamiPdf.dll','HamiPdf.runtimeconfig.json','coreclr.dll','Microsoft.Web.WebView2.Wpf.dll','Forms\Web\index.html','Forms\Web\forms.mjs','Forms\Web\pages.html','Forms\Web\pages.mjs','Forms\Web\pdfjs\build\pdf.worker.mjs','Forms\Web\pdfjs\web\pdf_viewer.mjs')) {
         if (!(Test-Path -LiteralPath (Join-Path $publish $required))) { throw "Missing published file: $required" }
     }
     $loader = Get-ChildItem -LiteralPath $publish -Recurse -Filter WebView2Loader.dll
@@ -53,7 +53,7 @@ try {
     if ($check.ExitCode -ne 0 -or !(Test-Path -LiteralPath $uiReport)) { throw 'Published UI verification failed. Installer was not created.' }
     $verified = Get-Content -LiteralPath $uiReport -Raw | ConvertFrom-Json
     if (!$verified.ok -or $verified.version -ne $version) { throw 'Published UI version/features do not match the source.' }
-    Write-Host '[OK] Published UI: About button, developer credit and high-resolution PNG verified.'
+    Write-Host '[OK] Published UI: Scanner window, About button, developer credit and high-resolution PNG verified.'
     & $IsccPath "/DPublishDir=$publish" "/DOutputDir=$output" "/DAppVersion=$version" (Join-Path $PSScriptRoot 'Packaging\HamiPdf.iss')
     if ($LASTEXITCODE -ne 0) { throw 'Installer compilation failed.' }
     $setup = Join-Path $output "HamiPdf-Setup-$version-win-x64.exe"

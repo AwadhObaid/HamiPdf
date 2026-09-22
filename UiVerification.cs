@@ -14,6 +14,7 @@ internal static class UiVerification
     {
         MainWindow? main = null;
         AboutWindow? about = null;
+        Scanning.ScanWindow? scan = null;
         try
         {
             main = new MainWindow();
@@ -24,16 +25,23 @@ internal static class UiVerification
             about = new AboutWindow();
             if (about.FindName("DeveloperName") is not TextBlock developer || developer.Text != "Awadh Faghmah")
                 throw new InvalidDataException("Published About dialog does not contain the developer credit.");
+            if (main.FindName("ScanButton") is not Button scanButton || scanButton.Content?.ToString() != "مسح ضوئي")
+                throw new InvalidDataException("Published main window does not contain the scanner button.");
+            scan = new Scanning.ScanWindow(false);
+            if (scan.FindName("BackendBox") is not ComboBox backends || backends.Items.Count != 5)
+                throw new InvalidDataException("Published scanner window is incomplete.");
+            if (about.FindName("CheckUpdatesButton") is not Button)
+                throw new InvalidDataException("Published About dialog does not contain update checking.");
             string version = Assembly.GetExecutingAssembly().GetName().Version!.ToString(3);
             if (about.FindName("VersionText") is not TextBlock versionLabel || !versionLabel.Text.Contains(version))
                 throw new InvalidDataException("About dialog version does not match the assembly.");
             string assembly = Assembly.GetExecutingAssembly().Location;
             File.WriteAllText(Path.GetFullPath(reportPath), JsonSerializer.Serialize(new {
-                ok = true, version, aboutButton = true, developer = developer.Text,
+                ok = true, version, scannerWindow = true, updateCheck = true, aboutButton = true, developer = developer.Text,
                 logoPixelWidth = bitmap.PixelWidth, assembly,
                 assemblySha256 = Convert.ToHexString(SHA256.HashData(File.ReadAllBytes(assembly)))
             }, new JsonSerializerOptions { WriteIndented = true }));
         }
-        finally { about?.Close(); main?.Close(); }
+        finally { scan?.Close(); about?.Close(); main?.Close(); }
     }
 }

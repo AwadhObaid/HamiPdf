@@ -54,7 +54,22 @@ public partial class MainWindow : Window
         catch (Exception ex) { if (!closed) ShowError("تعذر فتح الملف.\n" + ex.Message); }
         finally { opening = false; }
     }
-    private void Window_Loaded(object sender, RoutedEventArgs e) => RefreshActive();
+    private async void Window_Loaded(object sender, RoutedEventArgs e)
+    {
+        RefreshActive();
+        var settings = Updates.UpdateSettings.Load();
+        if (!settings.Automatic || DateTime.UtcNow - settings.LastAttemptUtc < TimeSpan.FromDays(1)) return;
+        settings.LastAttemptUtc = DateTime.UtcNow; settings.Save();
+        try
+        {
+            var update = await Updates.ReleaseFeed.CheckAsync(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version!);
+            if (closed || modalOpen || opening || !IsEnabled || update == null) return;
+            var latestSettings = Updates.UpdateSettings.Load();
+            if (!latestSettings.Automatic || latestSettings.IgnoredVersion == update.Version.ToString(3)) return;
+            Modal(() => new Updates.UpdateWindow(update) { Owner = this }.ShowDialog());
+        }
+        catch { /* Offline/startup rate limits are silent; manual check reports errors. */ }
+    }
     private void Open_Click(object sender, RoutedEventArgs e) => ChooseFiles();
     private void Open_Executed(object sender, ExecutedRoutedEventArgs e) => ChooseFiles();
     private void ChooseFiles()
@@ -180,6 +195,24 @@ public partial class MainWindow : Window
             }
         }
         catch (Exception ex) { ShowError("تعذر فتح محرر النماذج.\n" + ex.Message); }
+    }
+    private void Scan_Click(object sender, RoutedEventArgs e)
+    {
+        try
+        {
+            string? activePath = Active?.Path;
+            var scanner = new Scanning.ScanWindow(activePath != null) { Owner = this };
+            Modal(() => scanner.ShowDialog());
+            if (closed || scanner.SavedPath is not string scanned) return;
+            EnqueueFiles([scanned]);
+            if (scanner.AppendRequested && activePath != null)
+            {
+                var manager = new Pages.PageManagerWindow(activePath, scanned) { Owner = this };
+                Modal(() => manager.ShowDialog());
+                if (!closed && manager.SavedPath is string merged) EnqueueFiles([merged]);
+            }
+        }
+        catch (Exception ex) { ShowError("تعذر فتح المسح الضوئي.\n" + ex.Message); }
     }
     private void Pages_Click(object sender, RoutedEventArgs e)
     {

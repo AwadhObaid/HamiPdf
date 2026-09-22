@@ -19,6 +19,8 @@
    </StackPanel>
   </Border>
   <TextBlock Text="تخضع مكتبات الطرف الثالث لتراخيصها الخاصة. يعمل البرنامج على الملفات محليًا." FontSize="12" TextWrapping="Wrap" TextAlignment="Center" Foreground="#657785" Margin="0,15,0,16"/>
+  <CheckBox x:Name="AutomaticUpdates" Content="التحقق من التحديثات عند التشغيل (مرة يوميًا)" Margin="0,0,0,8" Click="Automatic_Click"/>
+  <Button x:Name="CheckUpdatesButton" Content="التحقق من التحديثات الآن" Padding="10,7" Margin="0,0,0,12" Click="CheckUpdates_Click"/>
   <Button Content="إغلاق" IsCancel="True" Width="95" Padding="10,6" HorizontalAlignment="Center"/>
  </StackPanel>
 </Window>
