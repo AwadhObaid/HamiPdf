@@ -1,4 +1,4 @@
-﻿$ErrorActionPreference = 'Stop'
+$ErrorActionPreference = 'Stop'
 . (Join-Path $PSScriptRoot 'GitHubTools.ps1')
 Initialize-GitHub
 $manifest = Assert-SourceManifest $PSScriptRoot
@@ -38,7 +38,7 @@ try {
         Assert-Native 'Stage source changes'
         git -c core.whitespace=cr-at-eol diff --cached --check -- '*.cs' '*.xaml' '*.csproj' '*.ps1'
         Assert-Native 'Check source patch formatting'
-        git -c user.name='Awadh Faghmah' -c user.email='29819140+AwadhObaid@users.noreply.github.com' commit -m "Release $($manifest.version): tested scanner support and GitHub update notifications"
+        git -c user.name='Awadh Faghmah' -c user.email='29819140+AwadhObaid@users.noreply.github.com' commit -m "Release $($manifest.version): update source for release"
         Assert-Native 'Commit source'
         git push origin HEAD:main
         Assert-Native 'Push source'

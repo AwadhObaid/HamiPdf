@@ -1,3 +1,11 @@
+# 0.12.0 — PDF compression
+
+- Added batch PDF compression with lossless and smart-image modes.
+- Lossless mode keeps the original file when the rewritten PDF is not smaller.
+- Smart-image mode offers three quality presets and optional grayscale output.
+- Output is written to a separate `_compressed.pdf` file; source PDFs are not modified.
+- Smart-image mode rasterizes page content and may not preserve searchable text or interactive PDF elements.
+- Retains the existing scanner and GitHub update-check features.
 # 0.11.0 — GitHub update feed and release publishing
 
 - Includes scanner 0.10.0, user-confirmed successful on Windows.
