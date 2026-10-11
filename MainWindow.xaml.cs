@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Threading;
+using HamiPdf.Compression;
 using HamiPdf.Services;
 using Microsoft.Web.WebView2.Core;
 using Microsoft.Web.WebView2.Wpf;
@@ -69,6 +70,15 @@ public partial class MainWindow : Window
             Modal(() => new Updates.UpdateWindow(update) { Owner = this }.ShowDialog());
         }
         catch { /* Offline/startup rate limits are silent; manual check reports errors. */ }
+    }
+    private void Compress_Click(object sender, RoutedEventArgs e)
+    {
+        var initialFiles = Active == null
+            ? Array.Empty<string>()
+            : new[] { Active.Path };
+
+        var window = new PdfCompressionWindow(initialFiles) { Owner = this };
+        Modal(() => window.ShowDialog());
     }
     private void Open_Click(object sender, RoutedEventArgs e) => ChooseFiles();
     private void Open_Executed(object sender, ExecutedRoutedEventArgs e) => ChooseFiles();

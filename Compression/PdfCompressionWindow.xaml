@@ -1,0 +1,111 @@
+<Window x:Class="HamiPdf.Compression.PdfCompressionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ضغط ملفات PDF"
+        Width="900"
+        Height="650"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="CanResize">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="ضغط ملفات PDF"
+                   FontSize="24"
+                   FontWeight="SemiBold"/>
+
+        <StackPanel Grid.Row="1" Margin="0,18,0,12">
+            <TextBlock Text="اختر ملفات PDF أو اسحبها إلى القائمة."
+                       FontSize="14"/>
+            <TextBlock Text="الملف الأصلي لا يتم تعديله."
+                       Margin="0,5,0,0"
+                       Opacity="0.7"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,0,0,12">
+            <Button x:Name="AddFilesButton"
+                    Content="إضافة ملفات"
+                    Width="120"
+                    Margin="0,0,8,0"
+                    Click="AddFiles_Click"/>
+            <Button x:Name="ClearButton"
+                    Content="مسح القائمة"
+                    Width="120"
+                    Click="Clear_Click"/>
+        </StackPanel>
+
+        <Border Grid.Row="3"
+                BorderThickness="1"
+                BorderBrush="#808080"
+                CornerRadius="6"
+                Padding="8"
+                AllowDrop="True"
+                DragOver="Files_DragOver"
+                Drop="Files_Drop">
+            <ListView x:Name="FilesList">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="الملف" DisplayMemberBinding="{Binding FileName}" Width="330"/>
+                        <GridViewColumn Header="الحالة" DisplayMemberBinding="{Binding Status}" Width="160"/>
+                        <GridViewColumn Header="الحجم الأصلي" DisplayMemberBinding="{Binding OriginalSize}" Width="120"/>
+                        <GridViewColumn Header="الحجم الجديد" DisplayMemberBinding="{Binding NewSize}" Width="120"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Border>
+
+        <StackPanel Grid.Row="4" Margin="0,14,0,0">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="الوضع:" VerticalAlignment="Center"/>
+                <ComboBox x:Name="ModeComboBox"
+                          Width="210"
+                          Margin="8,0,18,0"
+                          SelectedIndex="1"
+                          SelectionChanged="Mode_Changed">
+                    <ComboBoxItem Content="ضغط بدون فقدان"/>
+                    <ComboBoxItem Content="ضغط ذكي للصور"/>
+                </ComboBox>
+
+                <TextBlock Text="الجودة:" VerticalAlignment="Center"/>
+                <ComboBox x:Name="PresetComboBox"
+                          Width="180"
+                          Margin="8,0,18,0"
+                          SelectedIndex="1">
+                    <ComboBoxItem Content="جودة عالية"/>
+                    <ComboBoxItem Content="موصى بها"/>
+                    <ComboBoxItem Content="أصغر حجم"/>
+                </ComboBox>
+
+                <CheckBox x:Name="GrayscaleCheckBox"
+                          Content="تدرج رمادي"
+                          VerticalAlignment="Center"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right"
+                        Margin="0,14,0,0">
+                <Button x:Name="CompressButton"
+                        Content="بدء الضغط"
+                        Width="130"
+                        Height="34"
+                        Click="Compress_Click"/>
+                <Button Content="إغلاق"
+                        Width="100"
+                        Height="34"
+                        Margin="8,0,0,0"
+                        Click="Close_Click"/>
+            </StackPanel>
+
+            <ProgressBar x:Name="Progress"
+                         Height="6"
+                         Margin="0,12,0,0"
+                         Minimum="0"
+                         Maximum="100"/>
+        </StackPanel>
+    </Grid>
+</Window>
